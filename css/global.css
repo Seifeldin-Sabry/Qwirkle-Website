@@ -12,8 +12,15 @@ body, html {
 
 h1, h2, p, div, a, figurecaption {
     color: #222630;
+    font-family: Arial;
 }
-
+p {
+    font-size: 16px;
+}
+a {
+    font-size: 18px;
+    text-decoration: none;
+}
 *, *::before, *::after {
     box-sizing: inherit;
 }
@@ -21,17 +28,21 @@ h1, h2, p, div, a, figurecaption {
 #logo {
     display: block;
     margin: auto;
-    max-width: 900px;
+    max-width: 800px;
     width: 100%;
     height: auto;
     min-width: 200px;
-    animation: fadeIn 4s;
-    -webkit-animation: fadeIn 4s;
-    -moz-animation: fadeIn 4s;
-    -o-animation: fadeIn 4s;
-    -ms-animation: fadeIn 4s;
+    animation: fadeIn 2s;
+    -webkit-animation: fadeIn 2s;
+    -moz-animation: fadeIn 2s;
+    -o-animation: fadeIn 2s;
+    -ms-animation: fadeIn 2s;
     -webkit-filter: drop-shadow(15px 15px 20px #121212);
     filter: drop-shadow(15px 15px 20px #121212);
+}
+body > header > figure {
+    margin: 0;
+    padding: 16px;
 }
 @media only screen and (max-width:  940px){
     #logo {
@@ -86,62 +97,39 @@ button:hover {
     cursor: pointer;
     transform: scale(1.1);
 }
-#col1, #col2 {
-    max-width: 200px;
-    margin: auto;
-    display: inline-block;
+/***Menu***/
+.bottom-menu {
+    text-align: center;
 }
-article {
-    max-width: 900px;
-    margin: auto;
+body > main > article > nav > * {
+    margin: 5px;
+    background-color: #FF5733;
+    color: #fff;
+    border-color: transparent;
+    font-size: 18px;
+    border-radius: 5px;
+    box-shadow: 15px 15px 20px #121212;
+    padding: 5px 10px;
+    font-family: Arial;
 }
-#btn1 {
-    animation: fadeIn 6s;
-    -webkit-animation: fadeIn 6s;
-    -moz-animation: fadeIn 6s;
-    -o-animation: fadeIn 6s;
-    -ms-animation: fadeIn 6s;
+body > main > article > nav > a:hover {
+    cursor: pointer;
+    color: #222630;
 }
-#btn2 {
-    animation: fadeIn 7s;
-    -webkit-animation: fadeIn 7s;
-    -moz-animation: fadeIn 7s;
-    -o-animation: fadeIn 7s;
-    -ms-animation: fadeIn 7s;
-}
-
-#btn3 {
-    animation: fadeIn 8s;
-    -webkit-animation: fadeIn 8s;
-    -moz-animation: fadeIn 8s;
-    -o-animation: fadeIn 8s;
-    -ms-animation: fadeIn 8s;
-}
-#btn4 {
-    animation: fadeIn 9s;
-    -webkit-animation: fadeIn 9s;
-    -moz-animation: fadeIn 9s;
-    -o-animation: fadeIn 9s;
-    -ms-animation: fadeIn 9s;
-}
-article {
-    padding: 10%;
+/***Footer***/
+body > footer > p {
+    margin: 0;
+    font-family: "American Typewriter";
+    padding: 0 10px 0 10px;
 }
 
-@media only screen and (min-width:  505px){
-    #col2 {
-        float: right;
-    }
+footer {
+    position: fixed;
+    bottom:0;
+    left:0;
+    padding: 10px 0;
+    font-size: 20px;
+    text-align: center;
+    width:100%;
+    background: rgba(255, 255, 255, 0.52);
 }
-
-@media only screen and (max-width:  504px){
-    article {
-        width: 200px;
-        padding: 50px 0 0 0;
-    }
-    button {
-        margin-bottom: 12%;
-    }
-}
-
-
