@@ -1,0 +1,23 @@
+
+.integrity-container{
+    display: inline-flex;
+    justify-content: space-around;
+}
+
+.integrity-container video{
+    margin-right: 200px;
+}
+
+
+.table-btn-container table{
+    border: 2px solid black;
+    border-spacing: 0.5rem;
+    border-collapse: collapse;
+}
+
+
+
+.table-btn-container th,td {
+    border: 2px solid black;
+}
+
