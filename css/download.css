@@ -76,3 +76,6 @@ button {
 footer {
     position: fixed !important;
 }
+body > main {
+    padding-bottom: 50px !important;
+}
