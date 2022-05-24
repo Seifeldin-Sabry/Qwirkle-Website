@@ -79,3 +79,7 @@ footer {
 body > main {
     padding-bottom: 50px !important;
 }
+#sha256jar, #sha512jar, #md5jar, #sha256zip, #sha512zip, #md5zip {
+    font-size: 10px;
+    word-break: break-all;
+}
