@@ -72,4 +72,13 @@ article {
         margin-bottom: 18% !important;
     }
 }
+footer {
+    position: fixed !important;
+}
+html {
+    height: 100vh !important;
+}
+body > main {
+    margin-bottom: 0 !important;
+}
 

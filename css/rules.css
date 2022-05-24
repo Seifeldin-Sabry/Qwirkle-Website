@@ -1,18 +1,113 @@
 article {
-    background: rgba(255, 255, 255, 0.62);
-    padding: 20px;
+    background: rgb(255 255 255);
+    padding: 20px 20px 40px 20px;
 }
 h1.page-title {
     color: rgba(37, 37, 37, 0.96);
     text-align: center;
     font-size: 30px;
-    margin: 0 0 20px 0;
+    margin: 0;
 }
 .rules-column {
-    max-width: 300px;
     white-space: pre-line;
     margin: 0;
+    display: inline-flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+
+.image {
+    flex-basis: 40%
+}
+
+img {
+    max-width: 100%
 }
 body > main > article > div > p, body > main > article > div > h2 {
     margin: 0;
+}
+body > main > article > div * {
+    margin: 0;
+}
+.rules-image img{
+    max-width: 170px;
+}
+.inner-column {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+h2 {
+    font-size: 18px;
+    color: #008bd2 !important;
+}
+p {
+    font-size: 16px;
+}
+
+.inner-column * {
+    margin-top: -10px;
+}
+.rules-full-line * {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: -10px;
+}
+#vb1_2 {
+    height: 40px;
+}
+#main-paragraph, #second-paragraph {
+    margin-left: 13px;
+}
+.img-label {
+    padding: 10px;
+    color: #FF5733;
+}
+article {
+    max-width: 1660px;
+    margin: auto;
+}
+#hbvb2 {
+    height: 130px;
+}
+#second-img-label {
+    margin-top: -112px;
+}
+#third-image-label {
+    margin-top: -170px;
+}
+#hbvb3_1 {
+    max-width: 220px !important;
+}
+.main-column {
+    max-width: 400px;
+    display: inline-block;
+    margin: auto;
+}
+@media only screen and (max-width:  1652px){
+    article {
+        max-width: 1260px;
+    }
+}
+@media only screen and (max-width:  1248px){
+    article {
+        max-width: 860px;
+    }
+}
+@media only screen and (max-width:  844px){
+    article {
+        max-width: 440px;
+    }
+}
+#vbox4_1_2, #vbox4_2_1 {
+    max-width: 250px !important;
+    margin-top: 0;
+    margin-left: 0;
+}
+#forth-image-label, #fifth-image-label {
+    padding: 0 !important;
+}
+ul {
+    padding-left: 0;
 }
