@@ -51,6 +51,7 @@ h1.page-title {
     flex-direction: row;
     justify-content: space-evenly;
 }
+
 @media only screen and (min-width:  1048px) {
     #preview-video {
         min-height: 340px;
