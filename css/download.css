@@ -8,6 +8,7 @@
     display: inline-block;
     vertical-align: top;
     min-width: 500px;
+    margin-top: -10px;
 }
 .integrity-container video{
     margin-right: 200px;
@@ -47,12 +48,22 @@ h1.page-title {
     flex-direction: row;
     justify-content: space-evenly;
 }
-
+@media only screen and (min-width:  1048px) {
+    #preview-video {
+        min-height: 340px;
+    }
+}
+@media only screen and (max-width:  1047px) {
+    #preview-video {
+        min-height: 200px;
+    }
+}
 #preview-video {
     display: block;
     margin: auto;
     padding: 20px;
-    min-height: 270px;
+    width: 100%;
+    height: auto;
 }
 body > main > article > div.integrity-container > p {
     padding: 20px;
