@@ -58,3 +58,18 @@ article {
     display: block;
     margin: auto;
 }
+button {
+    margin-bottom: 0 !important;
+}
+@media only screen and (max-width:  1048px){
+    article {
+        max-width: 500px;
+    }
+    #preview-video {
+        min-height: 250px;
+    }
+    .left-column, .integrity-container {
+        min-width: auto;
+        width: auto;
+    }
+}
