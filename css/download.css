@@ -21,6 +21,9 @@
     border-collapse: collapse;
 }
 
+.integrity-container a{
+    text-decoration: blue underline;
+}
 
 
 .table-btn-container th,td {
