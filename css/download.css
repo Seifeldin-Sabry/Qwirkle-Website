@@ -41,6 +41,13 @@ h1.page-title {
     margin: 50px auto;
     display: block;
 }
+
+.buttons-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
 #preview-video {
     display: block;
     margin: auto;
