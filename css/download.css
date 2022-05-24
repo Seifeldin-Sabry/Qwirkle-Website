@@ -1,9 +1,14 @@
-
-.integrity-container{
-    display: inline-flex;
-    justify-content: space-around;
+.left-column {
+    width: 49%;
+    display: inline-block;
+    min-width: 500px;
 }
-
+.integrity-container {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    min-width: 500px;
+}
 .integrity-container video{
     margin-right: 200px;
 }
@@ -21,3 +26,35 @@
     border: 2px solid black;
 }
 
+article {
+    background: rgb(255 255 255);
+    padding: 20px 20px 40px 20px;
+}
+h1.page-title {
+    color: rgba(37, 37, 37, 0.96);
+    text-align: center;
+    font-size: 30px;
+    margin: 0;
+}
+.download-button {
+    width: 200px;
+    margin: 50px auto;
+    display: block;
+}
+#preview-video {
+    display: block;
+    margin: auto;
+    padding: 20px;
+    min-height: 270px;
+}
+body > main > article > div.integrity-container > p {
+    padding: 20px;
+}
+.table-btn-container {
+    width: 100%;
+}
+article {
+    max-width: 1440px;
+    display: block;
+    margin: auto;
+}
