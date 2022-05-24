@@ -74,5 +74,5 @@ button {
     }
 }
 footer {
-    position: absolute !important;
+    position: fixed !important;
 }
