@@ -151,6 +151,7 @@ body > main {
     margin-bottom: 20px;
     padding-bottom: 50px;
 }
+
 article {
     animation: fadeIn 2s;
     -webkit-animation: fadeIn 2s;
