@@ -73,3 +73,6 @@ button {
         width: auto;
     }
 }
+footer {
+    position: absolute !important;
+}

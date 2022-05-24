@@ -44,9 +44,10 @@ body > header > figure {
     margin: 0;
     padding: 16px;
 }
-@media only screen and (max-width:  940px){
-    #logo {
-    }
+.logo-link {
+    max-width: 800px;
+    display: block;
+    margin: auto;
 }
 @keyframes fadeIn {
     0% {opacity:0;}
@@ -75,6 +76,7 @@ body > header > figure {
 /*** Body ***/
 body {
     margin: 0;
+    min-height: 100vh;
 }
 html {
     background-image: url("../media/images/tiles3D_min.png");
@@ -136,7 +138,7 @@ body > footer > p {
 }
 
 footer {
-    position: initial;
+    position: static;
     bottom:0;
     left:0;
     padding: 10px 0;
