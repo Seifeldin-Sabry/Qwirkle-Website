@@ -108,14 +108,15 @@ body > main {
 }
 #integrity-info {
     text-align: center;
-    padding: 10px;
+    padding: 20px;
 }
 #integrity-iframe{
     width: 972px;
-    height: 433px;
+    height: 431px;
     position: relative;
     overflow: hidden;
     margin: auto;
+    box-shadow: 15px 15px 20px #121212;
 }
 
 #iframe-id{
