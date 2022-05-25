@@ -8,7 +8,6 @@
     display: inline-block;
     vertical-align: top;
     min-width: 500px;
-    margin-top: -10px;
 }
 .integrity-container video{
     margin-right: 200px;
@@ -37,7 +36,7 @@ article {
 }
 .download-button {
     width: 200px;
-    margin: 50px auto;
+    margin: 50px auto 10px;
     display: block;
 }
 
@@ -129,6 +128,16 @@ body > main {
         margin: auto;
         padding: 10px;
     }
+    body > main > article > div.buttons-container {
+        padding-bottom: 0 !important;
+    }
+    .download-button {
+        margin: 20px auto !important;
+    }
+}
+
+body > main > article > div.buttons-container {
+    padding-bottom: 5%;
 }
 #integrity-info-mobile {
     display: none;
