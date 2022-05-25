@@ -2,12 +2,6 @@ article {
     background: rgb(255 255 255);
     padding: 20px 20px 40px 20px;
 }
-h1.page-title {
-    color: rgba(37, 37, 37, 0.96);
-    text-align: center;
-    font-size: 30px;
-    margin: 0;
-}
 .rules-column {
     white-space: pre-line;
     margin: 0;

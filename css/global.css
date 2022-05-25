@@ -158,3 +158,9 @@ article {
     -o-animation: fadeIn 2s;
     -ms-animation: fadeIn 2s;
 }
+h1.page-title {
+    padding: 10px;
+    text-align: center;
+    font-size: 30px;
+    margin: 0;
+}
