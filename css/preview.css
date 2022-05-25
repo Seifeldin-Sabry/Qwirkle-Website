@@ -5,12 +5,74 @@ article {
     background: rgba(255, 255, 255, 0.61);
     padding: 20px 20px 40px 20px;
 }
-.col-left, .col-right {
+#col-left, #col-right {
     width: 49%;
     padding: 10px;
     display: inline-block;
+    vertical-align: middle;
 }
 article {
     max-width: 1400px;
     margin: auto;
+}
+figurecaption {
+    font-size: 1em;
+    line-height: 25px;
+}
+#col-right figure {
+    display: inline-block;
+    margin: 20px;
+}
+#preview-video {
+    width: 100%;
+}
+#col-right > div > figure:nth-child(1n+0):hover .preview_text {
+    display: block;
+    pointer-events: none;
+}
+
+#col-right > div > figure:nth-child(1n+0) > p {
+    display: none;
+    position: relative;
+    bottom: 80px;
+    color: #ff0505;
+    font-size: 1.23em;
+    left: 49px;
+    width: 52px;
+    margin-bottom: -42px;
+    line-height: unset !important;
+}
+
+#col-right > div > figure:nth-child(1n+0) > img {
+    width: 100%;
+    height: auto;
+    padding: 1%;
+}
+#col-right > div > figure:nth-child(1n+0) > img:hover {
+    webkit-filter: blur(4px) !important;
+    filter: blur(4px) !important;
+    cursor: pointer;
+}
+#col-right > div > figure > figurecaption {
+    display: block;
+    text-align: center;
+}
+#col-right > div {
+    margin: auto;
+    max-width: 579px;
+}
+@media only screen and (max-width:  1262px){
+    #col-left, #col-right {
+        width: 100%;
+    }
+}
+@media only screen and (max-width:  639px){
+    #col-right > div {
+        max-width: 385px;
+    }
+}
+@media only screen and (max-width:  445px){
+    #col-right > div {
+        max-width: 190px;
+    }
 }
