@@ -103,5 +103,5 @@ figurecaption {
 #img_preview1 > figurecaption, #img_preview2 > figurecaption, #img_preview3 > figurecaption, #img_preview4 > figurecaption,
 #img_preview5 > figurecaption, #img_preview6 > figurecaption, #img_preview7 > figurecaption, #img_preview8 > figurecaption,
 #img_preview9 > figurecaption {
-    font-size: 24px;
+    font-size: 3vmin;
 }
