@@ -12,8 +12,8 @@ const hash512zipEl = document.getElementById('sha512zip');
 const hashMdn5zipEl = document.getElementById('md5zip');
 
 
-let {sha256: sha256Jar, sha512: sha512Jar, md5: md5Jar} = hashjar
-let {sha256: sha256Zip, sha512: sha512Zip, md5: md5Zip} = hashzip
+const {sha256: sha256Jar, sha512: sha512Jar, md5: md5Jar} = hashjar
+const {sha256: sha256Zip, sha512: sha512Zip, md5: md5Zip} = hashzip
 
 hash256jarEl.textContent = sha256Jar;
 hash512jarEl.textContent = sha512Jar;
