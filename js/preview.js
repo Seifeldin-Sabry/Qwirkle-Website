@@ -1,5 +1,5 @@
-const body = document.getElementById("body");
-const footer = document.getElementById("footer");
+const body = document.querySelector("body");
+const footer = document.querySelector("footer");
 const preview1 = document.getElementById("img_preview1");
 const target1 = document.getElementById("img1");
 target1.addEventListener("click", openPreview1);
