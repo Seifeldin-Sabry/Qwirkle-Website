@@ -96,14 +96,12 @@ figurecaption {
     width: 100%;
     padding: 2%;
     max-height: 870px;
-    max-width: 1347px;
+    max-width: 1300px;
     margin: auto;
     display: block;
 }
 #img_preview1 > figurecaption, #img_preview2 > figurecaption, #img_preview3 > figurecaption, #img_preview4 > figurecaption,
 #img_preview5 > figurecaption, #img_preview6 > figurecaption, #img_preview7 > figurecaption, #img_preview8 > figurecaption,
 #img_preview9 > figurecaption {
-    margin-top: -10px;
-    padding-bottom: 60px;
     font-size: 24px;
 }
