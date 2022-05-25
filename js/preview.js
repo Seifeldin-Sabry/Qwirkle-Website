@@ -14,7 +14,7 @@ function openPreview1() {
         body.style.overflow = "hidden";
         footer.style.display = "none";
     }
-};
+}
 
 const preview2 = document.getElementById("img_preview2");
 const target2 = document.getElementById("img2");
@@ -30,7 +30,7 @@ function openPreview2() {
         body.style.overflow = "hidden";
         footer.style.display = "none";
     }
-};
+}
 
 const preview3 = document.getElementById("img_preview3");
 const target3 = document.getElementById("img3");
@@ -46,7 +46,7 @@ function openPreview3() {
         body.style.overflow = "hidden";
         footer.style.display = "none";
     }
-};
+}
 
 const preview4 = document.getElementById("img_preview4");
 const target4 = document.getElementById("img4");
@@ -62,7 +62,7 @@ function openPreview4() {
         body.style.overflow = "hidden";
         footer.style.display = "none";
     }
-};
+}
 
 const preview5 = document.getElementById("img_preview5");
 const target5 = document.getElementById("img5");
@@ -78,7 +78,7 @@ function openPreview5() {
         body.style.overflow = "hidden";
         footer.style.display = "none";
     }
-};
+}
 
 const preview6 = document.getElementById("img_preview6");
 const target6 = document.getElementById("img6");
@@ -94,7 +94,7 @@ function openPreview6() {
         body.style.overflow = "hidden";
         footer.style.display = "none";
     }
-};
+}
 
 const preview7 = document.getElementById("img_preview7");
 const target7 = document.getElementById("img7");
@@ -110,7 +110,7 @@ function openPreview7() {
         body.style.overflow = "hidden";
         footer.style.display = "none";
     }
-};
+}
 
 const preview8 = document.getElementById("img_preview8");
 const target8 = document.getElementById("img8");
@@ -126,7 +126,7 @@ function openPreview8() {
         body.style.overflow = "hidden";
         footer.style.display = "none";
     }
-};
+}
 
 const preview9 = document.getElementById("img_preview9");
 const target9 = document.getElementById("img9");
@@ -142,4 +142,4 @@ function openPreview9() {
         body.style.overflow = "hidden";
         footer.style.display = "none";
     }
-};
+}
