@@ -1,7 +1,7 @@
 "use strict";
 
-import {hashjar} from "./hashjar.js";
-import {hashzip} from "./hashzip.js";
+import {hashjar} from "./hash/hashjar.js";
+import {hashzip} from "./hash/hashzip.js";
 
 const hash256jarEl = document.getElementById('sha256jar');
 const hash512jarEl = document.getElementById('sha512jar');
