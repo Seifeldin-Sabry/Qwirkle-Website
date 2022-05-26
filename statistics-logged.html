@@ -22,27 +22,39 @@
         <h1 class="page-title">Statistics</h1>
         <div id="form-container">
             <form>
-                <label for="playerName">Search By Name</label>
-                <input type="" id="playerName">
+                <div id="name-list" class="dropdown-check-list" tabindex="100">
+                    <span class="anchor">Select Player Names</span>
+                    <ul class="checkbox-list">
+                    </ul>
+                </div>
                 <label for="dateBefore">Search Games before Date: </label>
                 <input type="date" id="dateBefore">
                 <label for="dateAfter">Search games after Date:</label>
                 <input type="date" id="dateAfter">
-                <div>
-                    <label for="difficulty-AI">AI</label>
-                    <input type="radio" name="difficult" id="difficulty-AI">
-                </div>
-                <div>
-                    <label for="difficulty-EASY">EASY</label>
-                    <input type="radio" name="difficult" id="difficulty-EASY">
-                </div>
                 <label for="score">Score</label>
                 <input type="number" id="score">
                 <label for="avgTime">AverageTime</label>
                 <input type="number" id="avgTime">
+                <div id="difficulty" class="dropdown-check-list" tabindex="100">
+                    <span class="anchor">Game Difficulty: </span>
+                    <ul class="checkbox-list">
+                        <li><input type="checkbox">AI</li>
+                        <li><input type="checkbox">Easy</li>
+                    </ul>
+                </div>
+                <div id="game-outcome" class="dropdown-check-list" tabindex="100">
+                    <span class="anchor">Game Outcome</span>
+                    <ul class="checkbox-list">
+                        <li><input type="checkbox">Win</li>
+                        <li><input type="checkbox">Loss</li>
+                    </ul>
+                </div>
             </form>
             <p>Search in our database</p>
         </div>
+        <table id="search-result">
+
+        </table>
     </article>
     <!--    Navigation menu-->
     <nav class="bottom-menu">
