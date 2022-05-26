@@ -124,6 +124,7 @@ form {
     padding: 5px 50px 5px 10px;
     border: 1px solid #ccc;
     height: 39px;
+    line-height: 28px;
 }
 
 .dropdown-check-list .anchor:after {
@@ -156,10 +157,6 @@ form {
 
 .dropdown-check-list ul.checkbox-list li {
     list-style: none;
-}
-
-.dropdown-check-list.visible .anchor {
-    color: #0094ff;
 }
 
 .dropdown-check-list.visible .checkbox-list {
