@@ -16,8 +16,14 @@ h1.page-title {
     filter: drop-shadow(15px 15px 20px #121212);
     text-shadow: 15px 15px 20px #121212;
 }
-label, span {
+label {
     width: 200px;
+    display: inline-block;
+    color: white;
+    font-size: 16px;
+}
+span {
+    width: 100%;
     display: inline-block;
     color: white;
     font-size: 16px;
@@ -31,6 +37,7 @@ input, #difficulty > ul, #game-outcome > ul {
     border: none;
     margin-bottom: 15px;
     padding: 2%;
+    z-index: 2;
 }
 form {
     display: block;
@@ -57,9 +64,11 @@ form {
     text-shadow: 15px 15px 20px #121212;
     margin-bottom: 0;
     margin-top: 20px;
+    z-index: 1;
 }
-#form-container > form > ul > li.button > button {
+#query > button {
     margin-bottom: 0 !important;
+    margin-top: 40px !important;
     margin: auto;
     display: block;
 }
@@ -91,8 +100,13 @@ form {
     width: 70px;
 }
 #difficulty > ul, #game-outcome > ul {
-    width: 70px;
-    background: transparent !important;
+    padding: 2px;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-top: none;
+    background: black;
+    width: 42%;
+    padding: 25px;
 }
 #difficulty, #game-outcome {
     width: 49%;
@@ -100,6 +114,7 @@ form {
 }
 .dropdown-check-list {
     display: inline-block;
+    width: 99%;
 }
 
 .dropdown-check-list .anchor {
@@ -108,13 +123,14 @@ form {
     display: inline-block;
     padding: 5px 50px 5px 10px;
     border: 1px solid #ccc;
+    height: 39px;
 }
 
 .dropdown-check-list .anchor:after {
     position: absolute;
     content: "";
-    border-left: 2px solid black;
-    border-top: 2px solid black;
+    border-left: 2px solid white;
+    border-top: 2px solid white;
     padding: 5px;
     right: 10px;
     top: 20%;
@@ -148,4 +164,17 @@ form {
 
 .dropdown-check-list.visible .checkbox-list {
     display: block;
+    position: absolute;
+    background: black;
+    width: 85%;
+    padding: 25px;
 }
+#name-list > ul > li:nth-child(1) > input[type=checkbox], #name-list > ul > li:nth-child(2) > input[type=checkbox],
+#name-list > ul > li:nth-child(3) > input[type=checkbox], #name-list > ul > li:nth-child(4) > input[type=checkbox]{
+    width: 50px;
+}
+#name-list > ul > li:nth-child(1), #name-list > ul > li:nth-child(2), #name-list > ul > li:nth-child(3), #name-list > ul > li:nth-child(4) {
+    color: white;
+}
+
+

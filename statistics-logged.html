@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/statistics-logged.css">
-    <script src="js/statistics-logged.js" defer></script>
+    <script src="js/statistics-logged.js" type="module"></script>
     <link rel="icon" href="/media/images/favicon.ico" type="image/ico">
     <title>Statistics</title>
 </head>
@@ -21,7 +21,7 @@
     <article>
         <h1 class="page-title">Statistics</h1>
         <div id="form-container">
-            <form>
+            <form id="query">
                 <div id="name-list" class="dropdown-check-list" tabindex="100">
                     <span class="anchor">Select Player Names</span>
                     <ul class="checkbox-list">
@@ -49,6 +49,7 @@
                         <li><input type="checkbox">Loss</li>
                     </ul>
                 </div>
+                <button type="submit">Search</button>
             </form>
             <p>Search in our database</p>
         </div>
