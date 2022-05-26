@@ -203,3 +203,7 @@ h1.page-title {
         padding-bottom: 80px;
     }
 }
+
+.hidden{
+    display: none;
+}
