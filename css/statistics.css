@@ -41,11 +41,9 @@ form {
     background: #121212;
     width: 350px;
     height: 350px;
-    margin: auto;
     border-radius: 25px;
     filter: drop-shadow(15px 15px 20px #121212);
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin: 5% auto auto;
 }
 #form-container > h2 {
     color: white;
