@@ -93,11 +93,23 @@ body > main > article > div {
     left: 5%;
     width: 90%;
     height: 80%;
-    padding: 12%;
+    padding: 10%;
+    box-shadow: 15px 15px 20px #121212;
 }
 h2 {
-    font-size: 3vmax;
+    font-size: 2.8vmax;
+    margin-bottom: 0;
 }
 div.flip-box-back > p {
-    font-size: 1.8vmax;
+    font-size: 1.7vmax;
+}
+#roles1::after, #roles2::after, #roles3::after {
+    width: 100%;
+    line-height: 32px;
+    font-size: 21px;
+    content: "\f101";
+    font-family: 'Font Awesome 5 Free';
+    position: absolute;
+    bottom: 8%;
+    left: 0;
 }

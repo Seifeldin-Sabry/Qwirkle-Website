@@ -31,26 +31,26 @@ h1.page-title {
     width: 100%;
 }
 #col-right > div > figure:nth-child(1n+0):hover .preview_text {
-    display: block;
     pointer-events: none;
+    color: #ff0505;
 }
 
 #col-right > div > figure:nth-child(1n+0) > p {
-    display: none;
+    display: block;
     position: relative;
-    bottom: 80px;
-    color: #ff0505;
+    bottom: 84px;
     font-size: 1.53em;
     left: 49px;
     width: 52px;
-    margin-bottom: -51px;
+    margin-bottom: -35%;
     line-height: unset !important;
+    color: transparent;
+    height: 28px;
 }
 
 #col-right > div > figure:nth-child(1n+0) > img {
     width: 100%;
     height: auto;
-    padding: 1%;
 }
 #col-right > div > figure:nth-child(1n+0) > img:hover {
     webkit-filter: blur(4px) !important;
