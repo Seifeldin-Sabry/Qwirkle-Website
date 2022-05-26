@@ -1,6 +1,7 @@
 article {
     background: rgb(255 255 255);
     padding: 20px 20px 40px 20px;
+    box-shadow: 15px 15px 20px #121212;
 }
 .rules-column {
     white-space: pre-line;

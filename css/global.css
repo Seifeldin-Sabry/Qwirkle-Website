@@ -1,5 +1,13 @@
 /*** Global attributes ***/
+/*** Fonts ***/
+@font-face {
+    font-family: 'kg_primary_whimsyregular';
+    src: url('/fonts/kgprimarywhimsy-webfont.woff2') format('woff2'),
+    url('/fonts/kgprimarywhimsy-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 
+}
 html {
     margin: 0;
     height: 100vh;
@@ -12,10 +20,13 @@ body, html {
 
 h1, h2, p, div, a, figurecaption {
     color: #222630;
-    font-family: Arial;
+    font-family: 'kg_primary_whimsyregular';
 }
-p {
-    font-size: 16px;
+p, figurecaption, li {
+    font-size: 20px;
+}
+h2 {
+    font-size: 2em;
 }
 a {
     font-size: 18px;
@@ -135,6 +146,7 @@ body > footer > p {
     margin: 0;
     font-family: "American Typewriter";
     padding: 0 10px 0 10px;
+    font-size: 16px;
 }
 
 footer {
@@ -163,4 +175,10 @@ h1.page-title {
     text-align: center;
     font-size: 3vmax;
     margin: 0;
+    font-family: 'kg_primary_whimsyregular';
+}
+@media only screen and (max-width:  706px){
+    body > main {
+        padding-bottom: 80px;
+    }
 }

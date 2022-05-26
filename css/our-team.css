@@ -7,7 +7,7 @@ article {
 }
 h1.page-title {
     color: white;
-    padding: 20px;
+    padding: 0;
     text-shadow: 15px 15px 20px #121212;
 }
 p {
@@ -35,7 +35,7 @@ div.flip-box-front > figure {
     padding: 5%;
 }
 body > main > article > div {
-    padding: 2%;
+    padding: 1% 2% 0;
     margin: auto;
 }
 @media only screen and (max-width:  950px){
@@ -93,11 +93,11 @@ body > main > article > div {
     left: 5%;
     width: 90%;
     height: 80%;
-    padding: 15%;
+    padding: 12%;
 }
 h2 {
-    font-size: 2vmax;
+    font-size: 3vmax;
 }
 div.flip-box-back > p {
-    font-size: 1.2vmax;
+    font-size: 1.8vmax;
 }

@@ -33,6 +33,7 @@
 article {
     background: rgba(255, 255, 255, 0.71);
     padding: 20px 20px 40px 20px;
+    box-shadow: 15px 15px 20px #121212;
 }
 .download-button {
     width: 200px;
@@ -98,6 +99,7 @@ body > main {
 #sha256jar, #sha512jar, #md5jar, #sha256zip, #sha512zip, #md5zip {
     font-size: 10px;
     word-break: break-all;
+    font-family: sans-serif;
 }
 @media only screen and (max-width:  1049px){
     body > main > article > div.buttons-container {
@@ -116,4 +118,7 @@ body > main > article > div.buttons-container {
     text-align: center;
     margin: auto;
     padding: 10px;
+}
+.table-btn-container th, td {
+    font-size: 20px;
 }
