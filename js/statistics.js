@@ -9,23 +9,31 @@ const passwordInput = document.querySelector('#password');
 const invalidCredentials = document.querySelector('#credentials')
 invalidCredentials.style.color = 'red';
 
+const redirect = () => {
+    location.replace('../statistics-logged.html')
+}
 
+const setLogin = () => {
+    localStorage.setItem("isLoggedIn","true");
+}
+
+const isLoggedIn = () => {
+    return JSON.parse(localStorage.getItem("isLoggedIn"))
+}
 
 const validateLogin = (event) => {
     event.preventDefault();
 
     const filteredUsers = users.filter(obj => {
-        obj.password = passwordInput.value;
-        obj.username = usernameInput.value;
-        return obj;
+        return obj.username === usernameInput.value && obj.password === passwordInput.value;
     });
-
+    console.log(filteredUsers)
     if (!filteredUsers.length) {
         invalidCredentials.classList.remove('hidden');
         return;
     }
-    localStorage.setItem("isLoggedIn","true");
-    formEl.submit();
+    setLogin();
+    redirect();
 }
 
 formEl.addEventListener('submit', validateLogin)
