@@ -63,12 +63,12 @@ form {
     filter: drop-shadow(15px 15px 20px #121212);
     text-shadow: 15px 15px 20px #121212;
     margin-bottom: 0;
-    margin-top: 20px;
+    margin-top: 15px;
     z-index: 1;
 }
 #query > button {
     margin-bottom: 0 !important;
-    margin-top: 40px !important;
+    margin-top: 30px !important;
     margin: auto;
     display: block;
 }
@@ -175,6 +175,9 @@ form {
 }
 #name-list > ul > li:nth-child(1), #name-list > ul > li:nth-child(2), #name-list > ul > li:nth-child(3), #name-list > ul > li:nth-child(4) {
     color: white;
+}
+#name-list {
+    padding-bottom: 15px;
 }
 
 
