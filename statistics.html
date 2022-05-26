@@ -12,13 +12,35 @@
 <body>
 <header>
     <!-- Logo -->
-    <figure>
-        <a class="logo-link" href="index.html">
-            <img id="logo" src="./media/images/logoMAX.png" alt="Qwirkle_logo"></a>
-    </figure>
+    <div>
+        <figure>
+            <a class="logo-link" href="index.html">
+                <img id="logo" src="./media/images/logoMAX.png" alt="Qwirkle_logo"></a>
+        </figure>
+    </div>
 </header>
 <main>
     <article>
+        <h1 class="page-title">Statistics</h1>
+        <div id="form-container">
+            <h2>Login</h2>
+            <form action="statistics-logged.html" method="GET">
+                <ul>
+                    <li>
+                        <label for="username">Username: *</label>
+                        <input type="text" id="username" name="username" placeholder="Type a username" required>
+                    </li>
+                    <li>
+                        <label for="password">Password: *</label>
+                        <input type="text" id="password" name="password" placeholder="Choose a password" required>
+                    </li>
+                    <li class="button">
+                        <button type="submit">Submit</button>
+                    </li>
+                </ul>
+            </form>
+            <p>Login to access the page!</p>
+        </div>
     </article>
     <!--    Navigation menu-->
     <nav class="bottom-menu">

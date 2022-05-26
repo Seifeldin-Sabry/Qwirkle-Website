@@ -9,7 +9,7 @@ h1, h2, p, div, a, figurecaption {
     font-family: Arial;
 }
 article {
-    padding: 0 5% 5%;
+    padding: 0 5% 2%;
 }
 h1.page-title {
     color: #f7a601;
@@ -17,13 +17,13 @@ h1.page-title {
     text-shadow: 15px 15px 20px #121212;
 }
 label {
-    width: 100px;
+    width: 200px;
     display: inline-block;
     color: white;
     font-size: 16px;
 }
 input {
-    width: 150px;
+    width: 220px;
     font-family: 'kg_primary_whimsyregular';
     font-size: 20px;
     color: white;
@@ -39,8 +39,8 @@ form {
 #form-container {
     padding: 35px;
     background: #121212;
-    width: 350px;
-    height: 350px;
+    width: 500px;
+    height: 480px;
     margin: auto;
     border-radius: 25px;
     filter: drop-shadow(15px 15px 20px #121212);
@@ -65,4 +65,20 @@ form {
 }
 #form-container > form > ul > li.button {
     margin-top: 20px;
+}
+#form-container > form > div:nth-child(7) > label {
+    margin-bottom: 20px;
+}
+#form-container > form > div:nth-child(7) > label, #form-container > form > div:nth-child(8) > label {
+    margin: 0;
+    width: 50px;
+}
+#difficulty-EASY, #difficulty-AI {
+    width: auto;
+}
+#form-container > form > div:nth-child(7) {
+    margin-top: 10px;
+}
+#form-container > form > div:nth-child(8) {
+    margin-bottom: 10px;
 }

@@ -39,7 +39,6 @@ html {
 body, html {
     display: block;
 }
-
 h1, h2, p, div, a, figurecaption {
     color: #222630;
     font-family: 'kg_primary_whimsyregular';
@@ -195,7 +194,7 @@ article {
 h1.page-title {
     padding: 10px;
     text-align: center;
-    font-size: 3vmax;
+    font-size: 3em;
     margin: 0;
     font-family: 'kg_primary_whimsyregular';
 }
