@@ -33,7 +33,6 @@ const gameOutcomeCheckboxList = [...gameOutcomeListEl.children].map(li => [...li
 
 //if all unchecked we search for all elements
 const isAllUnchecked = (checkList) => {
-    console.log(checkList, 'checklist')
     return checkList.every(inputEl => !inputEl.checked)
 }
 
@@ -105,7 +104,6 @@ const queryData = (event) => {
             return checkedGameOutcome.map(el => el.value).includes(obj.game_outcome);
         })
     }
-    console.log(filteredData,'filteredGameOutcome')
     if (scoreInputEl.value >= 1){
         filteredData = filteredData.filter(obj => obj.player_score === scoreInputEl.value)
     }
