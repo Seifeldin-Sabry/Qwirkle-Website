@@ -25,9 +25,9 @@ const dateBeforeInputEl = document.querySelector('#dateBefore')
 const dateAfterInputEl = document.querySelector('#dateAfter')
 const avgTimeInputEl = document.querySelector('#avgTime')
 
-const namesCheckboxList = [...namesListEl.children].map(li => [...li.children].find(el => el === document.createElement('input')))
-const difficultyCheckboxList = [...difficultyListEl.children].map(li => [...li.children].find(el => el === document.createElement('input')))
-const gameOutcomeCheckboxList = [...gameOutcomeListEl.children].map(li => [...li.children].find(el => el === document.createElement('input')))
+const namesCheckboxList = [...namesListEl.children].map(li => [...li.children][0])
+const difficultyCheckboxList = [...difficultyListEl.children].map(li => [...li.children][0])
+const gameOutcomeCheckboxList = [...gameOutcomeListEl.children].map(li => [...li.children][0])
 
 //if all unchecked we search for all elements
 const isAllUnchecked = (checkList) => {
@@ -79,6 +79,7 @@ const queryData = (event) => {
 
     let filteredData = [...data]
     console.log(filteredData, 'original data')
+    console.log(namesListEl)
     console.log(namesCheckboxList)
     console.log(difficultyCheckboxList)
     console.log(gameOutcomeCheckboxList)
