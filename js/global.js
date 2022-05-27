@@ -10,13 +10,13 @@ const isLoggedIn = () => {
 function logout() {
     h2logoutEl.classList.add('hidden');
     localStorage.clear();
-    if (window.location.pathname ==="statistics-logged.html") {
-        window.location.pathname = 'statistics.html';
+    if (window.location.pathname === "statistics-logged.html") {
+        location.replace('../statistics.html');
     } else {
         location.reload();
     }
-
 }
+
 function showLogout() {
     if (JSON.parse(localStorage.getItem('isLoggedIn')) === true) {
         h2logoutEl.classList.remove('hidden');
