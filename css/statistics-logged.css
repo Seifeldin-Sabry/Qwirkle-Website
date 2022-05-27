@@ -182,4 +182,9 @@ input[type=number]::-webkit-outer-spin-button {
     -moz-appearance: none;
     appearance: none;
 }
+#query > button::after {
+    content: "\f00e";
+    font-family: 'Font Awesome 5 Free';
+    margin-left: 10px;
+}
 
