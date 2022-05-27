@@ -42,7 +42,7 @@ const validateLogin = (event) => {
 formEl.addEventListener('submit', validateLogin);
 
 function redirectIfLoggedIn() {
-    if (isLoggedIn) {
+    if (localStorage.getItem('isLoggedIn') != undefined) {
         redirect();
     }
 }

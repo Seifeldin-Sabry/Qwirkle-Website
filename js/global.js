@@ -12,7 +12,7 @@ function logout() {
     localStorage.clear();
 }
 function showLogout() {
-    if (isLoggedIn) {
+    if (localStorage.getItem('isLoggedIn') != undefined) {
         h2logoutEl.classList.remove('hidden');
     }
 }
