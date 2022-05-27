@@ -6,6 +6,8 @@ if (JSON.parse(localStorage.getItem('IsLoggedIn')) === undefined) redirectToLogi
 
 const data = JSON.parse(databaseData)
 
+console.log(window.location.pathname, 'pathname')
+console.log(window.location.href, 'href')
 
 //extracting names for checkboxes
 let uniqueNames = data.map(obj => obj.player_name)
