@@ -67,7 +67,8 @@ const clearTable = () => {
     tableRows.forEach(element => element.remove());
 }
 
-const drawTable = () => {
+const drawTable = (event) => {
+    event.preventDefault();
     clearTable();
     tableContainer.classList.remove('hidden')
     overlay.classList.remove('hidden')
@@ -81,8 +82,7 @@ const drawTable = () => {
     })
 }
 
-const queryData = (event) => {
-    event.preventDefault();
+const queryData = () => {
     if (checkListEl.classList.contains('visible')) {
         checkListEl.classList.toggle('visible')
     }
