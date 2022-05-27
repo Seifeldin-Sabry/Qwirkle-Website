@@ -211,9 +211,6 @@ const queryData = () => {
         filteredData = filteredData.filter(obj => obj.avg_time_per_turn == avgTimeInputEl.value)
     }
     queriedData = [...filteredData];
-    if(sortWith) {
-        queriedData = sortBy(sortWith)
-    }
     return queriedData;
 }
 
@@ -223,7 +220,6 @@ const drawTable = (event) => {
     clearTable();
     tableContainer.classList.remove('hidden');
     overlay.classList.remove('hidden');
-    queryData();
     console.log(queriedData,'in draw table')
     queriedData.forEach(object => {
         const row = document.createElement('tr')
