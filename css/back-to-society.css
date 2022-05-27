@@ -6,6 +6,7 @@ article {
     padding: 2% 4% 2%;
     background: rgba(255, 255, 255, 0.8);
     margin: auto;
+    box-shadow: 15px 15px 20px #121212;
 }
 h2.headline {
     margin-top: 0;
