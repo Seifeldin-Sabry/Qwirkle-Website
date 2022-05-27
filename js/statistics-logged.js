@@ -79,6 +79,7 @@ const sortBy = (column) => {
     }
     shiftBool(toFilterOn);
     const columnName = column.charAt(0).toUpperCase() + column.split(' ').slice(1).join('');
+    console.log(queriedData,'before')
     queriedData.sort((objA,objB) => {
         //if Ascending
         if (toFilterOn) {
@@ -90,6 +91,7 @@ const sortBy = (column) => {
         }
         return 0;
     })
+    console.log(queriedData)
     drawTable();
 }
 
