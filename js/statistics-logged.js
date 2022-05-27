@@ -87,12 +87,13 @@ const drawTable = (clear) => {
         })
         tableEl.append(row)
     })
+    document.querySelector('th').addEventListener('click',function(event) {
+        console.log(event.target)
+        console.log(event)
+    })
 }
 
-document.querySelector('th').addEventListener('click',function(event) {
-    console.log(event.target)
-    console.log(event)
-})
+
 
 const queryData = (event) => {
     event.preventDefault();
