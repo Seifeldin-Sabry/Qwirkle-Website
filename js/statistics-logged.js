@@ -90,6 +90,7 @@ const sortBy = (column) => {
         }
         return 0;
     })
+    console.log(queriedData)
     drawTable();
 }
 
