@@ -129,7 +129,7 @@ const queryData = (event) => {
         filteredData = filteredData.filter(obj => {
             const [year,month,day] = obj.date_played.split('-')
             let date = new Date(year,month-1,day)
-            return dateBefore.getTime()>= date.getTime();
+            return dateBefore.getTime() > date.getTime();
         })
     }
     if (dateAfterInputEl.value){
