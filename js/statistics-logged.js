@@ -80,8 +80,8 @@ const sortBy = (column) => {
     shiftBool(toFilterOn);
     const columnName = column.charAt(0).toUpperCase() + column.split(' ').slice(1).join('');
     queriedData = queriedData.sort((objA,objB) => {
-        console.log(objA,objB)
         //if Ascending
+        console.log(objB[columnName],objA[columnName]);
         if (toFilterOn) {
             if (objA[columnName] > objB[columnName]) return -1
             if (objA[columnName] < objB[columnName]) return 1
