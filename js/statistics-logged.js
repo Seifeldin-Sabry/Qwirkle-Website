@@ -10,9 +10,6 @@ let uniqueNames = data.map(obj => obj.player_name)
 uniqueNames = new Set(uniqueNames);
 
 
-
-
-
 const checkListEl = document.querySelector('#name-list');
 const gameOutcomeEl = document.querySelector('#game-outcome')
 const difficultyEl = document.querySelector('#difficulty')
@@ -28,9 +25,11 @@ const dateBeforeInputEl = document.querySelector('#dateBefore')
 const dateAfterInputEl = document.querySelector('#dateAfter')
 const avgTimeInputEl = document.querySelector('#avgTime')
 
-const namesCheckboxList = [...namesListEl.children].map(li => [...li.children].find(el => el === document.createElement('input')))
-const difficultyCheckboxList = [...difficultyListEl.children].map(li => [...li.children].find(el => el === document.createElement('input')))
-const gameOutcomeCheckboxList = [...gameOutcomeListEl.children].map(li => [...li.children].find(el => el === document.createElement('input')))
+const namesCheckboxList = () => {
+    return [...namesListEl.children].map(li => [...li.children][0])
+}
+const difficultyCheckboxList = [...difficultyListEl.children].map(li => [...li.children][0])
+const gameOutcomeCheckboxList = [...gameOutcomeListEl.children].map(li => [...li.children][0])
 
 //if all unchecked we search for all elements
 const isAllUnchecked = (checkList) => {
@@ -57,11 +56,14 @@ const getAllCheckedValues = (list) => {
     return list.filter(inputEl => inputEl.checked)
 }
 
-
+const clearTable = () => {
+    [...tableEl.children].forEach(element => element.remove());
+}
 
 const drawTable = (arrayObj) => {
+    clearTable();
     const firstRow = document.createElement('tr')
-    const arrHeaders = Object.keys(arrayObj[0])
+    const arrHeaders = Object.keys(data[0])
     for (const arrHeadersKey of arrHeaders) {
         firstRow.append(createElement(arrHeadersKey, true))
     }
@@ -80,8 +82,10 @@ const queryData = (event) => {
     event.preventDefault();
 
     let filteredData = [...data]
-    if (!isAllUnchecked(namesCheckboxList)){
-        const checkedNames = getAllCheckedValues(namesCheckboxList)
+    const namesListInputs = namesCheckboxList();
+
+    if (!isAllUnchecked(namesListInputs)){
+        const checkedNames = getAllCheckedValues(namesListInputs)
         filteredData = filteredData.filter(obj => {
             return checkedNames.map(el => el.value).includes(obj.player_name);
         })
@@ -100,8 +104,7 @@ const queryData = (event) => {
             return checkedGameOutcome.map(el => el.value).includes(obj.game_outcome);
         })
     }
-
-    if (!isNaN(scoreInputEl.value)){
+    if (scoreInputEl.value >= 1){
         filteredData = filteredData.filter(obj => obj.player_score === scoreInputEl.value)
     }
 
@@ -120,11 +123,9 @@ const queryData = (event) => {
             return dateBeforeInputEl.value <= date;
         })
     }
-
-    if (!isNaN(avgTimeInputEl.value)){
+    if (avgTimeInputEl.value >= 1){
         filteredData = filteredData.filter(obj => obj.avg_time_per_turn === avgTimeInputEl.value)
     }
-    console.log(filteredData)
     drawTable(filteredData);
 }
 
