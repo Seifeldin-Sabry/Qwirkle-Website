@@ -79,7 +79,7 @@ body > header > figure {
 .logo-link {
     max-width: 800px;
     display: block;
-    margin: auto;
+    margin: 0 150px;
 }
 @keyframes fadeIn {
     0% {opacity:0;}
@@ -205,6 +205,12 @@ h1.page-title {
     body > main {
         padding-bottom: 80px;
     }
+    #logout {
+        right: 20px !important;
+    }
+    #h2-logout {
+        font-size: 1.5em !important;
+    }
 }
 
 .hidden{
@@ -216,9 +222,13 @@ h1.page-title {
     top: 0;
     cursor: pointer;
     display: inline-block;
+    z-index: 9;
 }
 #logout > h2:hover {
     color: red;
+}
+#h2-logout {
+    color: #008bd2;
 }
 #h2-logout::after {
     line-height: 42px;
