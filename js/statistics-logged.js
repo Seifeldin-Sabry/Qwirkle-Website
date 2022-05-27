@@ -3,7 +3,7 @@
 import {databaseData} from "./db/json.js";
 
 const data = JSON.parse(databaseData)
-
+let queriedData;
 
 //extracting names for checkboxes
 let uniqueNames = data.map(obj => obj.player_name)
@@ -34,19 +34,72 @@ const scoreInputEl = document.querySelector('#score')
 const dateBeforeInputEl = document.querySelector('#dateBefore')
 const dateAfterInputEl = document.querySelector('#dateAfter')
 const avgTimeInputEl = document.querySelector('#avgTime')
+const shiftBool = (toShift) => toShift !== true;
+
+let isAscendingGameOutcome = true;
+let isAscendingAvgTime= true;
+let isAscendingDifficulty = true;
+let isAscendingNames = true;
+let isAscendingDate = true;
+let isAscendingPlayerScore = true;
+let isAscendingComputerScore = true;
+let isAscendingGameId = true;
 
 const namesCheckboxList = () => {
     return [...namesListEl.children].map(li => [...li.children][0])
 }
 
+const sortBy = (column) => {
+    let toFilterOn;
+    switch (column){
+        case "Player name":
+            toFilterOn = isAscendingNames;
+            break;
+        case "Game id":
+            toFilterOn = isAscendingGameId;
+            break;
+        case "Game outcome":
+            toFilterOn = isAscendingGameOutcome
+            break;
+        case "Computer score":
+            toFilterOn = isAscendingComputerScore
+            break;
+        case "Player score":
+            toFilterOn = isAscendingPlayerScore
+            break;
+        case "Avg time per turn":
+            toFilterOn = isAscendingAvgTime
+            break;
+        case "Date played":
+            toFilterOn = isAscendingDate
+            break;
+        case "Difficulty chosen":
+            toFilterOn = isAscendingDifficulty
+            break;
+    }
+    shiftBool(toFilterOn);
+    const columnName = column.charAt(0).toUpperCase() + column.split(' ').slice(1).join('');
+    queriedData.sort((objA,objB) => {
+        //if Ascending
+        if (toFilterOn) {
+            if (objA[columnName] > objB[columnName]) return -1
+            if (objA[columnName] < objB[columnName]) return 1
+        }else {
+            if (objA[columnName] < objB[columnName]) return -1
+            if (objA[columnName] > objB[columnName]) return 1
+        }
+        return 0;
+    })
+    drawTable();
+}
+
 const addTableHeadersEventHandlers = (event) => {
-    // event.stopPropagation();
     const tableHeaders = [...[...tableEl.children][0].children]
     console.log(tableHeaders)
     tableHeaders.forEach(header => {
         header.addEventListener('click',function (e){
             e.stopPropagation();
-            console.log(e)
+            sortBy(e.target.innerText)
         })
     })
 }
@@ -154,6 +207,7 @@ const queryData = () => {
     if (avgTimeInputEl.value >= 1){
         filteredData = filteredData.filter(obj => obj.avg_time_per_turn == avgTimeInputEl.value)
     }
+    queriedData = filteredData;
     return filteredData;
 }
 
