@@ -134,7 +134,7 @@ const clearTable = () => {
 }
 
 const drawTable = (event) => {
-    event.preventDefault();
+    if (event) event.preventDefault();
     clearTable();
     tableContainer.classList.remove('hidden')
     overlay.classList.remove('hidden')
@@ -208,7 +208,7 @@ const queryData = () => {
         filteredData = filteredData.filter(obj => obj.avg_time_per_turn == avgTimeInputEl.value)
     }
     queriedData = filteredData;
-    return filteredData;
+    return queriedData;
 }
 
 const createCheckBoxElement = (name) => {
