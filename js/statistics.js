@@ -19,13 +19,14 @@ const setLogin = (username) => {
     localStorage.setItem("user", `${username}`);
 }
 
-const isLoggedIn = () => {
+export const isLoggedIn = () => {
     return JSON.parse(localStorage.getItem("isLoggedIn"))
 }
 
+if (isLoggedIn()) redirect();
+
 const validateLogin = (event) => {
     event.preventDefault();
-
     const filteredUsers = users.filter(obj => {
         return obj.username === usernameInput.value && obj.password === passwordInput.value;
     });
