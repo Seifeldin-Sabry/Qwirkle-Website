@@ -47,6 +47,8 @@ let isAscendingPlayerScore = true;
 let isAscendingComputerScore = true;
 let isAscendingGameId = true;
 
+let isEventListenerAdded = false;
+
 const namesCheckboxList = () => {
     return [...namesListEl.children].map(li => [...li.children][0])
 }
@@ -157,7 +159,10 @@ const drawTable = (event) => {
         })
         tableEl.append(row)
     })
-    addTableHeadersEventHandlers();
+    if(!isEventListenerAdded){
+        addTableHeadersEventHandlers();
+        isEventListenerAdded = true;
+    }
 }
 
 const queryData = () => {
