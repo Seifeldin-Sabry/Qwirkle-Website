@@ -111,6 +111,7 @@ const addTableHeadersEventHandlers = () => {
         header.addEventListener('click',function (e){
             e.stopPropagation();
             sortBy(e.target.innerText)
+            drawTable();
         })
     })
 }
