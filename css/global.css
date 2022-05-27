@@ -234,6 +234,7 @@ h1.page-title {
 }
 #h2-logout {
     color: #008bd2;
+    font-family: 'kg_primary_whimsyregular';
 }
 #h2-logout::after {
     line-height: 42px;
