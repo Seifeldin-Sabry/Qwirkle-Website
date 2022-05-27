@@ -65,7 +65,9 @@ const drawTable = (arrayObj) => {
     const firstRow = document.createElement('tr')
     const arrHeaders = Object.keys(data[0])
     for (const arrHeadersKey of arrHeaders) {
-        firstRow.append(createElement(arrHeadersKey, true))
+        let header = arrHeadersKey.replace(/\_/g, ' ');
+        header = header.charAt(0).toUpperCase() + header.slice(1);
+        firstRow.append(createElement(header, true))
     }
     tableEl.prepend(firstRow)
 
