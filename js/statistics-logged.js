@@ -173,7 +173,9 @@ function closePopup(){
     overlay.classList.add('hidden');
 }
 function redirectNotLoggedIn(){
-    if (!localStorage.getItem('IsLoggedIn')){
+    console.log('outside if statment')
+    if (JSON.parse(localStorage.getItem('isLoggedIn')) === null || JSON.parse(localStorage.getItem('isLoggedIn')) === undefined) {
+        console.log('inside if statment')
         redirectToLogin();
     }
 }
