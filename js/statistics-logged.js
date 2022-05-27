@@ -9,6 +9,7 @@ const data = JSON.parse(databaseData)
 let uniqueNames = data.map(obj => obj.player_name)
 uniqueNames = new Set(uniqueNames);
 
+
 const checkListEl = document.querySelector('#name-list');
 const gameOutcomeEl = document.querySelector('#game-outcome')
 const difficultyEl = document.querySelector('#difficulty')
@@ -36,17 +37,18 @@ const isAllUnchecked = (checkList) => {
     return checkList.every(inputEl => !inputEl.checked)
 }
 
-function createElement(text, header, id) {
+function createElement(text, header) {
     const toReturn = document.createElement(header ? 'th' : 'td')
     toReturn.textContent = text
     if (Number.parseFloat(text)) toReturn.style.textAlign = 'right'
-    if (id) toReturn.setAttribute('id',id);
     return toReturn
 }
 
 function redirectToLogin() {
     location.replace('../statistics.html');
 }
+
+
 
 const getAllCheckedValues = (list) => {
     return list.filter(inputEl => inputEl.checked)
@@ -56,19 +58,8 @@ const clearTable = () => {
     [...tableEl.children].forEach(element => element.remove());
 }
 
-const clearRows = () => {
-    const tableRows = [...tableEl.children]
-    tableRows.shift();
-    tableRows.forEach(element => element.remove());
-}
-
-// const sort = (event) => {
-//     const headerToSort = event.t
-// }
-
-const drawTable = (clear) => {
-    if(clear) clearTable();
-    else clearRows();
+const drawTable = (arrayObj) => {
+    clearTable();
     tableContainer.classList.remove('hidden')
     overlay.classList.remove('hidden')
 
@@ -77,11 +68,10 @@ const drawTable = (clear) => {
     for (const arrHeadersKey of arrHeaders) {
         let header = arrHeadersKey.replace(/_/g, ' ');
         header = header.charAt(0).toUpperCase() + header.slice(1);
-        firstRow.append(createElement(header, true, id))
+        firstRow.append(createElement(header, true))
     }
     tableEl.prepend(firstRow)
 
-    const arrayObj = queryData();
     arrayObj.forEach(object => {
         const row = document.createElement('tr')
         Object.values(object).forEach(prop => {
@@ -89,13 +79,7 @@ const drawTable = (clear) => {
         })
         tableEl.append(row)
     })
-    document.querySelector('th').addEventListener('click',function(event) {
-        console.log(event.target)
-        console.log(event)
-    })
 }
-
-
 
 const queryData = (event) => {
     event.preventDefault();
@@ -156,7 +140,9 @@ const queryData = (event) => {
     if (avgTimeInputEl.value >= 1){
         filteredData = filteredData.filter(obj => obj.avg_time_per_turn == avgTimeInputEl.value)
     }
-    return filteredData
+    drawTable(filteredData);
+    overlay.classList.remove('hidden')
+
 }
 
 const createCheckBoxElement = (name) => {
@@ -183,11 +169,13 @@ function closePopup(){
     overlay.classList.add('hidden');
 }
 function redirectNotLoggedIn(){
+    console.log('outside if statment')
     if (JSON.parse(localStorage.getItem('isLoggedIn')) === null || JSON.parse(localStorage.getItem('isLoggedIn')) === undefined) {
+        console.log('inside if statment')
         redirectToLogin();
     }
 }
 overlay.addEventListener('click', closePopup);
-form.addEventListener('submit',() => drawTable(false));
+form.addEventListener('submit',queryData);
 window.addEventListener('load',redirectNotLoggedIn);
 
