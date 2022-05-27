@@ -6,7 +6,6 @@ const logoutEl = document.querySelector('#logout');
 const isLoggedIn = () => {
     return JSON.parse(localStorage.getItem("isLoggedIn"))
 }
-logoutEl.addEventListener('click', logout);
 
 function logout() {
     h2logoutEl.classList.add('hidden');
@@ -23,6 +22,6 @@ function showLogout() {
         h2logoutEl.classList.remove('hidden');
     }
 }
-
+logoutEl.addEventListener('click', logout);
 window.onload = showLogout;
 
