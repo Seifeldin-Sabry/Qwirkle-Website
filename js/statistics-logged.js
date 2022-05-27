@@ -143,7 +143,6 @@ const clearTable = () => {
     const tableRows = [...tableEl.children]
     tableRows.shift();
     tableRows.forEach(element => {
-        console.log(element);
         element.remove()
     });
 }
@@ -217,12 +216,12 @@ const drawTable = (event) => {
     tableContainer.classList.remove('hidden');
     overlay.classList.remove('hidden');
     queryData();
+    console.log(queriedData)
     queriedData.forEach(object => {
         const row = document.createElement('tr')
         Object.values(object).forEach(prop => {
             row.append(createElement(prop, false))
         })
-        console.log(row,'added element')
         tableEl.append(row)
     })
     if(!isEventListenerAdded){
