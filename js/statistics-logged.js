@@ -143,7 +143,10 @@ const getAllCheckedValues = (list) => {
 const clearTable = () => {
     const tableRows = [...tableEl.children]
     tableRows.shift();
-    tableRows.forEach(element => element.remove());
+    tableRows.forEach(element => {
+        console.log(element);
+        element.remove()
+    });
 }
 
 const drawTable = (event) => {
