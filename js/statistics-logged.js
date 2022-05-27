@@ -2,6 +2,8 @@
 
 import {databaseData} from "./db/json.js";
 
+if (JSON.parse(localStorage.getItem('IsLoggedIn')) === undefined) redirectToLogin();
+
 const data = JSON.parse(databaseData)
 
 
@@ -16,7 +18,7 @@ const difficultyEl = document.querySelector('#difficulty')
 const form = document.querySelector('#query')
 const tableEl = document.querySelector('#search-result')
 const tableContainer = document.querySelector('#search-result-container')
-const logoutEl = document.querySelector('#h2-logout')
+const logoutEl = document.querySelector('#logout')
 const overlay = document.querySelector('#overlay')
 
 const namesListEl = document.querySelector('#name-list .checkbox-list');
@@ -45,8 +47,7 @@ function createElement(text, header) {
     return toReturn
 }
 
-const redirectToLogin = (event) => {
-    console.log('redirect')
+function redirectToLogin(event) {
     location.replace('../statistics.html');
 }
 
