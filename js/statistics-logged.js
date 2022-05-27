@@ -174,14 +174,4 @@ function closePopup(){
 overlay.addEventListener('click', closePopup);
 form.addEventListener('submit',queryData);
 
-const redirect = () => {
-    location.replace('../statistics.html');
-}
-function redirectIfNotLoggedIn() {
-    if (JSON.parse(localStorage.getItem('isLoggedIn')) != true) {
-        redirect();
-    }
-}
-
-window.onload = redirectIfNotLoggedIn;
 
