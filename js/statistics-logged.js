@@ -17,6 +17,7 @@ const form = document.querySelector('#query')
 const tableEl = document.querySelector('#search-result')
 const tableContainer = document.querySelector('#search-result-container')
 const logoutEl = document.querySelector('#h2-logout')
+const overlay = document.querySelector('#overlay')
 
 const namesListEl = document.querySelector('#name-list .checkbox-list');
 const difficultyListEl = document.querySelector('#difficulty .checkbox-list')
@@ -64,6 +65,7 @@ const clearTable = () => {
 const drawTable = (arrayObj) => {
     clearTable();
     tableContainer.classList.remove('hidden')
+    overlay.classList.remove('hidden')
 
     const firstRow = document.createElement('tr')
     const arrHeaders = Object.keys(data[0])
@@ -94,7 +96,6 @@ const queryData = (event) => {
     if (difficultyEl.classList.contains('visible')) {
         difficultyEl.classList.toggle('visible')
     }
-
     let filteredData = [...data]
     const namesListInputs = namesCheckboxList();
 
@@ -163,6 +164,10 @@ gameOutcomeEl.getElementsByClassName('anchor')[0].onclick = function() {
 difficultyEl.getElementsByClassName('anchor')[0].onclick = function() {
     difficultyEl.classList.toggle('visible')
 }
-
+function closePopup(){
+    overlay.style.display = "none"
+    location.reload();
+}
+overlay.addEventListener('click', closePopup);
 form.addEventListener('submit',queryData);
 
