@@ -124,16 +124,17 @@ const queryData = (event) => {
     }
 
     if (dateBeforeInputEl.value){
-        console.log(dateBeforeInputEl.value);
+        // const dateBefore = new
         filteredData = filteredData.filter(obj => {
             const [year,month,day] = obj.date_played.split('-')
             let date = new Date(year,month-1,day)
             return dateBeforeInputEl.value >= date;
         })
     }
-
+//2022-05-18 > date
     if (dateAfterInputEl.value){
         console.log(dateAfterInputEl.value);
+        console.log(typeof dateAfterInputEl.value)
         filteredData = filteredData.filter(obj => {
             const [year,month,day] = obj.date_played.split('-')
             let date = new Date(year,month-1,day)
