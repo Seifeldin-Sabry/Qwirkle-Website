@@ -96,7 +96,7 @@ const sortBy = (column) => {
     }
     console.log(toFilterOn)
     const columnName = column.toLowerCase().replace(' ','_');
-    return queriedData.sort((objA,objB) => {
+    queriedData = queriedData.sort((objA,objB) => {
         //if Ascending
         if (toFilterOn) {
             if (objA[columnName] > objB[columnName]) return -1
@@ -107,6 +107,7 @@ const sortBy = (column) => {
         }
         return 0;
     })
+    console.log(queriedData, 'after sort')
 }
 
 const addTableHeadersEventHandlers = () => {
@@ -114,7 +115,7 @@ const addTableHeadersEventHandlers = () => {
     tableHeaders.forEach(header => {
         header.addEventListener('click',function (e){
             e.stopPropagation();
-            drawTable('',queryData(e.target.innerText));
+            sortBy(e.target.innerText)
         })
     })
 }
@@ -151,7 +152,7 @@ const clearTable = () => {
 }
 
 
-const queryData = (sortWith) => {
+const queryData = () => {
     if (checkListEl.classList.contains('visible')) {
         checkListEl.classList.toggle('visible')
     }
