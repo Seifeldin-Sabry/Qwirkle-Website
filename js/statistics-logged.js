@@ -263,7 +263,10 @@ function redirectNotLoggedIn(){
     }
 }
 overlay.addEventListener('click', closePopup);
-form.addEventListener('submit',drawTable);
+form.addEventListener('submit',(ev) => {
+    queryData();
+    drawTable(ev)
+});
 window.addEventListener('load',redirectNotLoggedIn);
 
 
