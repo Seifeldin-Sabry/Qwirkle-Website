@@ -2,12 +2,8 @@
 
 import {databaseData} from "./db/json.js";
 
-
-
 const data = JSON.parse(databaseData)
 
-console.log(window.location.pathname, 'pathname')
-console.log(window.location.href, 'href')
 
 //extracting names for checkboxes
 let uniqueNames = data.map(obj => obj.player_name)
@@ -20,7 +16,6 @@ const difficultyEl = document.querySelector('#difficulty')
 const form = document.querySelector('#query')
 const tableEl = document.querySelector('#search-result')
 const tableContainer = document.querySelector('#search-result-container')
-const logoutEl = document.querySelector('#logout')
 const overlay = document.querySelector('#overlay')
 
 const namesListEl = document.querySelector('#name-list .checkbox-list');
