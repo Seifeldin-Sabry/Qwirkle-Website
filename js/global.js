@@ -14,7 +14,7 @@ function logout() {
     location.reload();
 }
 function showLogout() {
-    if (localStorage.getItem('isLoggedIn') != undefined) {
+    if (JSON.parse(localStorage.getItem('isLoggedIn')) === true) {
         h2logoutEl.classList.remove('hidden');
     }
 }

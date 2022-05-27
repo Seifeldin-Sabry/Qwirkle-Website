@@ -25,7 +25,7 @@ const form = document.querySelector('#query')
 
 
 const insertData = (event) => {
-    document
+
 }
 
 const createCheckBoxElement = (name) => {
