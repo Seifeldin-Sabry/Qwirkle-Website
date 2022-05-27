@@ -149,8 +149,7 @@ const drawTable = (event) => {
     clearTable();
     tableContainer.classList.remove('hidden')
     overlay.classList.remove('hidden')
-    const arrayObj = queryData();
-    arrayObj.forEach(object => {
+    queriedData.forEach(object => {
         const row = document.createElement('tr')
         Object.values(object).forEach(prop => {
             row.append(createElement(prop, false))
@@ -219,7 +218,6 @@ const queryData = () => {
         filteredData = filteredData.filter(obj => obj.avg_time_per_turn == avgTimeInputEl.value)
     }
     queriedData = filteredData;
-    return queriedData;
 }
 
 const createCheckBoxElement = (name) => {
