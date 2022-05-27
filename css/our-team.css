@@ -24,7 +24,7 @@ p {
 }
 figurecaption {
     color: #d41217;
-    font-size: 2vmax;
+    font-size: 28px;
     text-align: center;
     display: block;
     padding: 10px;
@@ -96,12 +96,12 @@ body > main > article > div {
     padding: 10%;
     box-shadow: 15px 15px 20px #121212;
 }
-h2 {
-    font-size: 2.8vmax;
+div.flip-box-back > h2 {
+    font-size: 2.2em;
     margin-bottom: 0;
 }
 div.flip-box-back > p {
-    font-size: 1.7vmax;
+    font-size: 1.8em;
 }
 #roles1::after, #roles2::after, #roles3::after {
     width: 100%;
@@ -112,4 +112,9 @@ div.flip-box-back > p {
     position: absolute;
     bottom: 8%;
     left: 0;
+}
+@media only screen and (max-width:  1230px){
+    div.flip-box-back > p {
+        font-size: 1.2em;
+    }
 }
