@@ -38,6 +38,15 @@ const avgTimeInputEl = document.querySelector('#avgTime')
 const namesCheckboxList = () => {
     return [...namesListEl.children].map(li => [...li.children][0])
 }
+
+const addTableHeadersEventHandlers = (event) => {
+    event.stopPropagation();
+    const tableHeaders = [...[...tableEl.children][0].children]
+    console.log(tableHeaders)
+    console.log(event)
+    console.log(event.target)
+}
+
 const difficultyCheckboxList = [...difficultyListEl.children].map(li => [...li.children][0])
 const gameOutcomeCheckboxList = [...gameOutcomeListEl.children].map(li => [...li.children][0])
 
@@ -80,6 +89,7 @@ const drawTable = (event) => {
         })
         tableEl.append(row)
     })
+    addTableHeadersEventHandlers();
 }
 
 const queryData = () => {
