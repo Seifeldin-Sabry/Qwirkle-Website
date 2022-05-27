@@ -43,8 +43,12 @@ const addTableHeadersEventHandlers = (event) => {
     // event.stopPropagation();
     const tableHeaders = [...[...tableEl.children][0].children]
     console.log(tableHeaders)
-    console.log(event)
-    console.log(event.target)
+    tableHeaders.forEach(header => {
+        header.addEventListener('click',function (e){
+            e.stopPropagation();
+            console.log(e)
+        })
+    })
 }
 
 const difficultyCheckboxList = [...difficultyListEl.children].map(li => [...li.children][0])
