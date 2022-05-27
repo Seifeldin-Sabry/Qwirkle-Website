@@ -126,7 +126,7 @@ const queryData = (event) => {
         })
     }
     console.log(filteredData,'filtered date after')
-    if (!isNaN(avgTimeInputEl.value)){
+    if (avgTimeInputEl.value >= 1){
         filteredData = filteredData.filter(obj => obj.avg_time_per_turn === avgTimeInputEl.value)
     }
     console.log(filteredData,'filtered average')
