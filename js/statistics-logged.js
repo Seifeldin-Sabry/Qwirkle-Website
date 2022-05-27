@@ -79,7 +79,7 @@ const queryData = (event) => {
 
     let filteredData = [...data]
     console.log(filteredData, 'original data')
-    console.log(namesListEl,'name list')
+    console.log([...namesListEl.children],'name list')
     console.log(namesCheckboxList,'namecheckbox')
     console.log(difficultyCheckboxList, 'difficult')
     console.log(gameOutcomeCheckboxList,'game outcome')
