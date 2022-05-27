@@ -154,12 +154,13 @@ const drawTable = (event) => {
     clearTable();
     tableContainer.classList.remove('hidden')
     overlay.classList.remove('hidden')
-    queryData();
+    queryData(); //updates queried data
     queriedData.forEach(object => {
         const row = document.createElement('tr')
         Object.values(object).forEach(prop => {
             row.append(createElement(prop, false))
         })
+        console.log(row,'added element')
         tableEl.append(row)
     })
     if(!isEventListenerAdded){
