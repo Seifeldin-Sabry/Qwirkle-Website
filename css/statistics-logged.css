@@ -5,7 +5,7 @@ ul {
     list-style-type: none;
     padding: 0;
 }
-h1, h2, p, div, a, figurecaption {
+h1, p, div, a, figurecaption {
     font-family: Arial;
 }
 article {
