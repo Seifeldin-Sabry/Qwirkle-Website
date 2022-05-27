@@ -124,21 +124,21 @@ const queryData = (event) => {
     }
 
     if (dateBeforeInputEl.value){
-        // const dateBefore = new
+        const [year, month, day] = dateBeforeInputEl.split('-');
+        const dateBefore = new Date(year,month-1,day);
         filteredData = filteredData.filter(obj => {
             const [year,month,day] = obj.date_played.split('-')
             let date = new Date(year,month-1,day)
-            return dateBeforeInputEl.value >= date;
+            return dateBefore.getTime()>= date.getTime();
         })
     }
-//2022-05-18 > date
     if (dateAfterInputEl.value){
-        console.log(dateAfterInputEl.value);
-        console.log(typeof dateAfterInputEl.value)
+        const [year, month, day] = dateBeforeInputEl.split('-');
+        const dateAfter = new Date(year,month-1,day);
         filteredData = filteredData.filter(obj => {
             const [year,month,day] = obj.date_played.split('-')
             let date = new Date(year,month-1,day)
-            return dateAfterInputEl.value <= date;
+            return dateAfter.getTime() <= date.getTime();
         })
     }
     if (avgTimeInputEl.value >= 1){
