@@ -15,6 +15,7 @@ const gameOutcomeEl = document.querySelector('#game-outcome')
 const difficultyEl = document.querySelector('#difficulty')
 const form = document.querySelector('#query')
 const tableEl = document.querySelector('#search-result')
+const tableContainer = document.querySelector('#search-result-container')
 const logoutEl = document.querySelector('#h2-logout')
 
 const namesListEl = document.querySelector('#name-list .checkbox-list');
@@ -62,6 +63,8 @@ const clearTable = () => {
 
 const drawTable = (arrayObj) => {
     clearTable();
+    tableContainer.classList.remove('hidden')
+
     const firstRow = document.createElement('tr')
     const arrHeaders = Object.keys(data[0])
     for (const arrHeadersKey of arrHeaders) {
@@ -82,6 +85,15 @@ const drawTable = (arrayObj) => {
 
 const queryData = (event) => {
     event.preventDefault();
+    if (checkListEl.classList.contains('visible')) {
+        checkListEl.classList.toggle('visible')
+    }
+    if (gameOutcomeEl.classList.contains('visible')){
+        gameOutcomeEl.classList.toggle('visible')
+    }
+    if (difficultyEl.classList.contains('visible')) {
+        difficultyEl.classList.toggle('visible')
+    }
 
     let filteredData = [...data]
     const namesListInputs = namesCheckboxList();
