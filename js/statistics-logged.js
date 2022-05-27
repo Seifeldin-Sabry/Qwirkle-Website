@@ -2,7 +2,7 @@
 
 import {databaseData} from "./db/json.js";
 
-window.addEventListener('loadstart',redirectNotLoggedIn);
+
 
 const data = JSON.parse(databaseData)
 
@@ -181,5 +181,5 @@ function redirectNotLoggedIn(){
 }
 overlay.addEventListener('click', closePopup);
 form.addEventListener('submit',queryData);
-
+window.addEventListener('load',redirectNotLoggedIn);
 
