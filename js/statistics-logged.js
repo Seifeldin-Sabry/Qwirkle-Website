@@ -31,7 +31,7 @@ const gameOutcomeCheckboxList = [...gameOutcomeListEl.children].map(li => [...li
 
 //if all unchecked we search for all elements
 const isAllUnchecked = (checkList) => {
-    console.log(checkList)
+    console.log(checkList, 'checklist')
     return checkList.every(inputEl => !inputEl.checked)
 }
 
