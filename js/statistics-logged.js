@@ -40,7 +40,7 @@ const namesCheckboxList = () => {
 }
 
 const addTableHeadersEventHandlers = (event) => {
-    event.stopPropagation();
+    // event.stopPropagation();
     const tableHeaders = [...[...tableEl.children][0].children]
     console.log(tableHeaders)
     console.log(event)
