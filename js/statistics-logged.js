@@ -78,7 +78,7 @@ const sortBy = (column) => {
             break;
     }
     shiftBool(toFilterOn);
-    const columnName = column.charAt(0).toUpperCase() + column.split(' ').slice(1).join('');
+    const columnName = column.toLowerCase().replace(' ','_');
     queriedData = queriedData.sort((objA,objB) => {
         //if Ascending
         console.log(objB[columnName],objA[columnName]);
