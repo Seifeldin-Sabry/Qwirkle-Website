@@ -25,7 +25,6 @@ const validateLogin = (event) => {
     const filteredUsers = users.filter(obj => {
         return obj.username === usernameInput.value && obj.password === passwordInput.value;
     });
-    console.log(filteredUsers)
     if (!filteredUsers.length) {
         invalidCredentials.classList.remove('hidden');
         formText.style.display = "none";
