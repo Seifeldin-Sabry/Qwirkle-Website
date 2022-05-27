@@ -120,7 +120,7 @@ const queryData = (event) => {
         })
     }
     if (scoreInputEl.value >= 1){
-        filteredData = filteredData.filter(obj => obj.player_score === scoreInputEl.value)
+        filteredData = filteredData.filter(obj => obj.player_score == scoreInputEl.value)
     }
 
     if (dateBeforeInputEl.value){
@@ -139,7 +139,7 @@ const queryData = (event) => {
         })
     }
     if (avgTimeInputEl.value >= 1){
-        filteredData = filteredData.filter(obj => obj.avg_time_per_turn === avgTimeInputEl.value)
+        filteredData = filteredData.filter(obj => obj.avg_time_per_turn == avgTimeInputEl.value)
     }
     drawTable(filteredData);
 }
