@@ -2,7 +2,7 @@
 
 import {databaseData} from "./db/json.js";
 
-if (JSON.parse(localStorage.getItem('IsLoggedIn')) === undefined) redirectToLogin();
+if (!JSON.parse(localStorage.getItem('IsLoggedIn'))) redirectToLogin();
 
 const data = JSON.parse(databaseData)
 
