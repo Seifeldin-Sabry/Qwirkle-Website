@@ -104,10 +104,12 @@ const queryData = (event) => {
     }
     console.log(filteredData,'filteredGameOutcome')
     if (!isNaN(scoreInputEl.value)){
+        console.log(scoreInputEl.value, 'score value')
         filteredData = filteredData.filter(obj => obj.player_score === scoreInputEl.value)
     }
     console.log(filteredData,'filtered score')
     if (dateBeforeInputEl.value){
+        console.log(dateBeforeInputEl.value, 'date bef value')
         filteredData = filteredData.filter(obj => {
             const [year,month,day] = obj.date_played.split('-')
             let date = new Date(year,month-1,day)
@@ -116,6 +118,7 @@ const queryData = (event) => {
     }
     console.log(filteredData,'filtered date before')
     if (dateAfterInputEl.value){
+        console.log(dateAfterInputEl.value, 'date after value')
         filteredData = filteredData.filter(obj => {
             const [year,month,day] = obj.date_played.split('-')
             let date = new Date(year,month-1,day)
