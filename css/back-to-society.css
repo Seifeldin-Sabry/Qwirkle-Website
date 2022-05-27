@@ -42,6 +42,17 @@ p.secondaryCaption {
     color: rgba(34, 38, 48, 0.65);
     margin-top: 5px;
 }
+#last-paragraph::after {
+    content: "\f1b8";
+    font-family: 'Font Awesome 5 Free';
+    margin-left: 10px;
+    text-shadow: none;
+    font-size: 30px;
+    position: relative;
+    bottom: 10px;
+    display: block;
+    margin: 5% 4% 0;
+}
 
 
 
