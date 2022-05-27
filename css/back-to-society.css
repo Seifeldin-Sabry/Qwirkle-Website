@@ -1,3 +1,47 @@
 footer {
     position: fixed !important;
 }
+article {
+    max-width: 1440px;
+    padding: 2% 4% 2%;
+    background: rgba(255, 255, 255, 0.8);
+    margin: auto;
+}
+h2.headline {
+    margin-top: 0;
+    color: #d41217;
+}
+h1.page-title, h2.headline, .main-container > p, .main-container > h2 {
+    text-align: center;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+.main-container > p {
+    padding: 2%;
+    font-family: Arial;
+    font-size: 18px;
+    white-space: pre-line;
+}
+q {
+    color: #008bd2;
+    font-style: italic;
+    line-height: 40px;
+}
+article img, article figure {
+    max-width: 300px;
+    display: inline-block;
+}
+figure {
+    margin: 10px
+}
+figurecaption, p.secondaryCaption {
+    display: block;
+    text-align: center;
+}
+p.secondaryCaption {
+    color: rgba(34, 38, 48, 0.65);
+    margin-top: 5px;
+}
+
+
+
