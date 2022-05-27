@@ -57,7 +57,9 @@ const clearTable = () => {
 }
 
 const clearRows = () => {
-    [...tableEl.children].shift().forEach(element => element.remove());
+    const tableRows = [...tableEl.children]
+    tableRows.shift();
+    tableRows.forEach(element => element.remove());
 }
 
 // const sort = (event) => {
