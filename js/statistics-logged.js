@@ -95,7 +95,7 @@ const sortBy = (column) => {
             break;
     }
     console.log(toFilterOn)
-    const columnName = column.toLowerCase().replace(' ','_');
+    const columnName = column.toLowerCase().replaceAll(' ','_');
     queriedData = queriedData.sort((objA,objB) => {
         //if Ascending
         if (toFilterOn) {
