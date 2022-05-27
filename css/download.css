@@ -116,3 +116,12 @@ body > main > article > div.buttons-container {
 .table-btn-container th, td {
     font-size: 20px;
 }
+h1.page-title::after {
+    content: "\f296";
+    font-family: 'Font Awesome 5 Brands';
+    margin-left: 10px;
+    text-shadow: none;
+    font-size: 30px;
+    position: relative;
+    bottom: 10px;
+}
