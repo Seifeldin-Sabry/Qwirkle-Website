@@ -53,6 +53,11 @@ p.secondaryCaption {
     display: block;
     margin: 5% 4% 0;
 }
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 
 
 
