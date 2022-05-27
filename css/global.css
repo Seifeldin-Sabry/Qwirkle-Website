@@ -210,3 +210,19 @@ h1.page-title {
 .hidden{
     display: none;
 }
+#logout {
+    position: absolute;
+    right: 50px;
+    top: 0;
+    cursor: pointer;
+    display: inline-block;
+}
+#logout > h2:hover {
+    color: red;
+}
+#h2-logout::after {
+    line-height: 42px;
+    font-size: 28px;
+    content: "\f08b";
+    font-family: 'Font Awesome 5 Free';
+}

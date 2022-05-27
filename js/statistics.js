@@ -6,15 +6,17 @@ const formEl = document.querySelector('form');
 const usernameInput = document.querySelector('#username');
 const passwordInput = document.querySelector('#password');
 
-const invalidCredentials = document.querySelector('#credentials')
+const invalidCredentials = document.querySelector('#credentials');
+const formText = document.querySelector('#form-text');
 invalidCredentials.style.color = 'red';
 
 const redirect = () => {
-    location.replace('../statistics-logged.html')
+    location.replace('../statistics-logged.html');
 }
 
-const setLogin = () => {
-    localStorage.setItem("isLoggedIn","true");
+const setLogin = (username) => {
+    localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem("user", `${username}`);
 }
 
 const isLoggedIn = () => {
@@ -30,10 +32,18 @@ const validateLogin = (event) => {
     console.log(filteredUsers)
     if (!filteredUsers.length) {
         invalidCredentials.classList.remove('hidden');
+        formText.style.display = "none";
         return;
     }
-    setLogin();
+    setLogin(usernameInput.value);
     redirect();
 }
 
-formEl.addEventListener('submit', validateLogin)
+formEl.addEventListener('submit', validateLogin);
+
+function redirectIfLoggedIn() {
+    if (isLoggedIn) {
+        redirect();
+    }
+}
+window.onload = redirectIfLoggedIn;

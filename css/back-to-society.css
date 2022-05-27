@@ -1,3 +1,88 @@
 footer {
     position: fixed !important;
 }
+#slideshow {
+    overflow: hidden;
+    height: 700px;
+    width: 2000px;
+    margin: 0 auto;
+    align-content: center;
+}
+
+.slide {
+    float: left;
+    height: 700px;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    width: 2000px;
+
+}
+
+
+.slide-wrapper {
+
+
+    width: calc(2000px * 8);
+
+
+    animation: slide 15s ease infinite;
+}
+
+.main{
+    align-items: center;
+}
+.Text{
+    display: inline-block;
+    font-size: 20px;
+    color: orange;
+    text-align: center;
+    flex-wrap: wrap;
+    text-align: center;
+    border: #222630 10px;
+    border-style: solid;
+    margin: 10px;
+}
+.Text p{
+    font-size: 50px;
+    color: orange;
+    text-align: center;
+}
+
+
+@keyframes slide {
+
+    /* Calculate the margin-left for
+      each of the slides */
+    12.5% {
+        margin-left: 0px;
+    }
+
+    25% {
+        margin-left: calc(-2000px * 1);
+
+    }
+
+    37.5% {
+        margin-left: calc(-2000px * 2);
+    }
+
+    50% {
+        margin-left: calc(-2000px * 3);
+    }
+    62.5% {
+        margin-left: calc(-2000px * 4);
+    }
+
+    75% {
+        margin-left: calc(-2000px * 5);
+    }
+
+    87.5% {
+        margin-left: calc(-2000px * 6);
+    }
+
+    100% {
+        margin-left: calc(-2000px * 7);
+    }
+}
