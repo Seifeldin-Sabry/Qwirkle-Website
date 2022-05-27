@@ -17,6 +17,7 @@ const checkListEl = document.querySelector('#name-list');
 const gameOutcomeEl = document.querySelector('#game-outcome')
 const difficultyEl = document.querySelector('#difficulty')
 const form = document.querySelector('#query')
+const tableEl = document.querySelector('#search-result')
 const logoutEl = document.querySelector('#h2-logout')
 
 const namesListEl = document.querySelector('#name-list .checkbox-list');
@@ -36,7 +37,12 @@ const isAllUnchecked = (checkList) => {
     return checkList.every(inputEl => !inputEl.checked)
 }
 
-
+function createElement(text, header) {
+    const toReturn = document.createElement(header ? 'th' : 'td')
+    toReturn.textContent = text
+    if (Number.parseFloat(text)) toReturn.style.textAlign = 'right'
+    return toReturn
+}
 
 const redirectToLogin = (event) => {
     console.log('redirect')
@@ -52,7 +58,27 @@ const getAllCheckedValues = (list) => {
 }
 
 
+
+const drawTable = (arrayObj) => {
+    const firstRow = document.createElement('tr')
+    const arrHeaders = Object.keys(arrayObj[0])
+    for (const arrHeadersKey of arrHeaders) {
+        firstRow.append(createElement(arrHeadersKey, true))
+    }
+    tableEl.prepend(firstRow)
+
+    arrayObj.forEach(object => {
+        const row = document.createElement('tr')
+        Object.values(object).forEach(prop => {
+            row.append(createElement(prop, false))
+        })
+        tableEl.append(row)
+    })
+}
+
 const queryData = (event) => {
+    event.preventDefault();
+
     let filteredData = [...data]
     if (!isAllUnchecked(namesCheckboxList)){
         const checkedNames = getAllCheckedValues(namesCheckboxList)
@@ -78,11 +104,6 @@ const queryData = (event) => {
     if (!isNaN(scoreInputEl.value)){
         filteredData = filteredData.filter(obj => obj.player_score === scoreInputEl.value)
     }
-    /*const dates = data.map(obj => obj.date_played).map(date => {
-    const [year,month,day] = date.split('-')
-    //-1 because date implementation is trash and it counts from 0
-    return new Date(year,month-1,day);
-})*/
 
     if (dateBeforeInputEl.value){
         filteredData = filteredData.filter(obj => {
@@ -101,10 +122,10 @@ const queryData = (event) => {
     }
 
     if (!isNaN(avgTimeInputEl.value)){
-
+        filteredData = filteredData.filter(obj => obj.avg_time_per_turn === avgTimeInputEl.value)
     }
-
-    return filteredData
+    console.log(filteredData)
+    drawTable(filteredData);
 }
 
 const createCheckBoxElement = (name) => {
@@ -128,5 +149,5 @@ difficultyEl.getElementsByClassName('anchor')[0].onclick = function() {
     difficultyEl.classList.toggle('visible')
 }
 
-// form.addEventListener('submit',)
+form.addEventListener('submit',queryData);
 
