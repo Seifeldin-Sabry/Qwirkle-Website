@@ -103,7 +103,7 @@ const queryData = (event) => {
         })
     }
     console.log(filteredData,'filteredGameOutcome')
-    if (scoreInputEl.value >= 0){
+    if (scoreInputEl.value >= 1){
         console.log(scoreInputEl.value, 'score value')
         filteredData = filteredData.filter(obj => obj.player_score === scoreInputEl.value)
     }
