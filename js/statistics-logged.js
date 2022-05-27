@@ -10,9 +10,6 @@ let uniqueNames = data.map(obj => obj.player_name)
 uniqueNames = new Set(uniqueNames);
 
 
-
-
-
 const checkListEl = document.querySelector('#name-list');
 const gameOutcomeEl = document.querySelector('#game-outcome')
 const difficultyEl = document.querySelector('#difficulty')
@@ -34,6 +31,7 @@ const gameOutcomeCheckboxList = [...gameOutcomeListEl.children].map(li => [...li
 
 //if all unchecked we search for all elements
 const isAllUnchecked = (checkList) => {
+    console.log(checkList)
     return checkList.every(inputEl => !inputEl.checked)
 }
 
