@@ -206,7 +206,7 @@ const queryData = () => {
     if (avgTimeInputEl.value >= 1){
         filteredData = filteredData.filter(obj => obj.avg_time_per_turn == avgTimeInputEl.value)
     }
-    queriedData = filteredData;
+    queriedData = [...filteredData];
 }
 
 
