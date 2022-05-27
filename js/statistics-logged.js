@@ -103,7 +103,6 @@ const sortBy = (column) => {
         }
         return 0;
     })
-    drawTable();
 }
 
 const addTableHeadersEventHandlers = () => {
@@ -148,26 +147,6 @@ const clearTable = () => {
     });
 }
 
-const drawTable = (event) => {
-    if (event) event.preventDefault();
-    clearTable();
-    tableContainer.classList.remove('hidden')
-    overlay.classList.remove('hidden')
-    queryData(); //updates queried data
-    console.log(queriedData,'after sort')
-    queriedData.forEach(object => {
-        const row = document.createElement('tr')
-        Object.values(object).forEach(prop => {
-            row.append(createElement(prop, false))
-        })
-        console.log(row,'added element')
-        tableEl.append(row)
-    })
-    if(!isEventListenerAdded){
-        addTableHeadersEventHandlers();
-        isEventListenerAdded = true;
-    }
-}
 
 const queryData = () => {
     if (checkListEl.classList.contains('visible')) {
@@ -230,6 +209,27 @@ const queryData = () => {
     queriedData = filteredData;
 }
 
+
+const drawTable = (event) => {
+    if (event) event.preventDefault();
+    clearTable();
+    tableContainer.classList.remove('hidden');
+    overlay.classList.remove('hidden');
+    queryData();
+    queriedData.forEach(object => {
+        const row = document.createElement('tr')
+        Object.values(object).forEach(prop => {
+            row.append(createElement(prop, false))
+        })
+        console.log(row,'added element')
+        tableEl.append(row)
+    })
+    if(!isEventListenerAdded){
+        addTableHeadersEventHandlers();
+        isEventListenerAdded = true;
+    }
+}
+
 const createCheckBoxElement = (name) => {
     const li = document.createElement('li')
     const html = `<input type="checkbox" value="${name}"/>${name}`
@@ -254,9 +254,7 @@ function closePopup(){
     overlay.classList.add('hidden');
 }
 function redirectNotLoggedIn(){
-    console.log('outside if statment')
     if (JSON.parse(localStorage.getItem('isLoggedIn')) === null || JSON.parse(localStorage.getItem('isLoggedIn')) === undefined) {
-        console.log('inside if statment')
         redirectToLogin();
     }
 }
