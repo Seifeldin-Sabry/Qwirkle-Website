@@ -15,6 +15,15 @@ const gameOutcomeEl = document.querySelector('#game-outcome')
 const difficultyEl = document.querySelector('#difficulty')
 const form = document.querySelector('#query')
 const tableEl = document.querySelector('#search-result')
+const firstRow = document.createElement('tr')
+const arrHeaders = Object.keys(data[0])
+for (const arrHeadersKey of arrHeaders) {
+    let header = arrHeadersKey.replace(/_/g, ' ');
+    header = header.charAt(0).toUpperCase() + header.slice(1);
+    firstRow.append(createElement(header, true))
+}
+tableEl.prepend(firstRow)
+
 const tableContainer = document.querySelector('#search-result-container')
 const overlay = document.querySelector('#overlay')
 
@@ -48,30 +57,21 @@ function redirectToLogin() {
     location.replace('../statistics.html');
 }
 
-
-
 const getAllCheckedValues = (list) => {
     return list.filter(inputEl => inputEl.checked)
 }
 
 const clearTable = () => {
-    [...tableEl.children].forEach(element => element.remove());
+    const tableRows = [...tableEl.children]
+    tableRows.shift();
+    tableRows.forEach(element => element.remove());
 }
 
-const drawTable = (arrayObj) => {
+const drawTable = () => {
     clearTable();
     tableContainer.classList.remove('hidden')
     overlay.classList.remove('hidden')
-
-    const firstRow = document.createElement('tr')
-    const arrHeaders = Object.keys(data[0])
-    for (const arrHeadersKey of arrHeaders) {
-        let header = arrHeadersKey.replace(/_/g, ' ');
-        header = header.charAt(0).toUpperCase() + header.slice(1);
-        firstRow.append(createElement(header, true))
-    }
-    tableEl.prepend(firstRow)
-
+    const arrayObj = queryData();
     arrayObj.forEach(object => {
         const row = document.createElement('tr')
         Object.values(object).forEach(prop => {
@@ -140,7 +140,7 @@ const queryData = (event) => {
     if (avgTimeInputEl.value >= 1){
         filteredData = filteredData.filter(obj => obj.avg_time_per_turn == avgTimeInputEl.value)
     }
-    drawTable(filteredData);
+    return filteredData;
 }
 
 const createCheckBoxElement = (name) => {
@@ -174,7 +174,7 @@ function redirectNotLoggedIn(){
     }
 }
 overlay.addEventListener('click', closePopup);
-form.addEventListener('submit',queryData);
+form.addEventListener('submit',drawTable);
 window.addEventListener('load',redirectNotLoggedIn);
 
 
