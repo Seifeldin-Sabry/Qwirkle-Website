@@ -218,7 +218,7 @@ const queryData = () => {
 }
 
 
-const drawTable = (event,table) => {
+const drawTable = (event) => {
     if (event) event.preventDefault();
     clearTable();
     tableContainer.classList.remove('hidden');
@@ -267,7 +267,7 @@ function redirectNotLoggedIn(){
     }
 }
 overlay.addEventListener('click', closePopup);
-form.addEventListener('submit',(ev) => drawTable(ev,queryData()));
+form.addEventListener('submit',drawTable);
 window.addEventListener('load',redirectNotLoggedIn);
 
 
