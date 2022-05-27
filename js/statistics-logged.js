@@ -54,8 +54,6 @@ function redirectToLogin(event) {
 }
 
 
-logoutEl.addEventListener('click', redirectToLogin)
-
 
 const getAllCheckedValues = (list) => {
     return list.filter(inputEl => inputEl.checked)
