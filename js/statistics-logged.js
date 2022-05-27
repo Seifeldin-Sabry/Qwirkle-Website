@@ -22,7 +22,15 @@ const namesListEl = document.querySelector('#name-list .checkbox-list');
 const gameOutcomeEl = document.querySelector('#game-outcome')
 const difficultyEl = document.querySelector('#difficulty')
 const form = document.querySelector('#query')
+const logoutEl = document.querySelector('#h2-logout')
 
+
+const redirectToLogin = (event) => {
+    location.replace('../statistics.html');
+}
+
+
+logoutEl.addEventListener('click', redirectToLogin)
 
 const insertData = (event) => {
 
@@ -49,5 +57,5 @@ difficultyEl.getElementsByClassName('anchor')[0].onclick = function() {
     difficultyEl.classList.toggle('visible')
 }
 
-form.addEventListener('submit',)
+// form.addEventListener('submit',)
 
