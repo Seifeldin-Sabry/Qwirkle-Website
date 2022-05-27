@@ -141,8 +141,6 @@ const queryData = (event) => {
         filteredData = filteredData.filter(obj => obj.avg_time_per_turn == avgTimeInputEl.value)
     }
     drawTable(filteredData);
-    overlay.classList.remove('hidden')
-
 }
 
 const createCheckBoxElement = (name) => {
