@@ -92,7 +92,7 @@ const sortBy = (column) => {
 
     console.log(toFilterOn)
     const columnName = column.toLowerCase().replace(' ','_');
-    queriedData = queriedData.sort((objA,objB) => {
+    queriedData = new Array(queriedData.sort((objA,objB) => {
         //if Ascending
         if (toFilterOn) {
             if (objA[columnName] > objB[columnName]) return -1
@@ -102,7 +102,7 @@ const sortBy = (column) => {
             if (objA[columnName] > objB[columnName]) return 1
         }
         return 0;
-    })
+    }))
 }
 
 const addTableHeadersEventHandlers = () => {
