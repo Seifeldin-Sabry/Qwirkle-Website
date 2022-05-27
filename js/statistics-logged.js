@@ -9,7 +9,6 @@ const data = JSON.parse(databaseData)
 let uniqueNames = data.map(obj => obj.player_name)
 uniqueNames = new Set(uniqueNames);
 
-
 const checkListEl = document.querySelector('#name-list');
 const gameOutcomeEl = document.querySelector('#game-outcome')
 const difficultyEl = document.querySelector('#difficulty')
@@ -37,18 +36,17 @@ const isAllUnchecked = (checkList) => {
     return checkList.every(inputEl => !inputEl.checked)
 }
 
-function createElement(text, header) {
+function createElement(text, header, id) {
     const toReturn = document.createElement(header ? 'th' : 'td')
     toReturn.textContent = text
     if (Number.parseFloat(text)) toReturn.style.textAlign = 'right'
+    if (id) toReturn.setAttribute('id',id);
     return toReturn
 }
 
 function redirectToLogin() {
     location.replace('../statistics.html');
 }
-
-
 
 const getAllCheckedValues = (list) => {
     return list.filter(inputEl => inputEl.checked)
@@ -58,8 +56,17 @@ const clearTable = () => {
     [...tableEl.children].forEach(element => element.remove());
 }
 
-const drawTable = (arrayObj) => {
-    clearTable();
+const clearRows = () => {
+    [...tableEl.children].shift().forEach(element => element.remove());
+}
+
+// const sort = (event) => {
+//     const headerToSort = event.t
+// }
+
+const drawTable = (clear) => {
+    if(clear) clearTable();
+    else clearRows();
     tableContainer.classList.remove('hidden')
     overlay.classList.remove('hidden')
 
@@ -68,10 +75,11 @@ const drawTable = (arrayObj) => {
     for (const arrHeadersKey of arrHeaders) {
         let header = arrHeadersKey.replace(/_/g, ' ');
         header = header.charAt(0).toUpperCase() + header.slice(1);
-        firstRow.append(createElement(header, true))
+        firstRow.append(createElement(header, true, id))
     }
     tableEl.prepend(firstRow)
 
+    const arrayObj = queryData();
     arrayObj.forEach(object => {
         const row = document.createElement('tr')
         Object.values(object).forEach(prop => {
@@ -80,6 +88,11 @@ const drawTable = (arrayObj) => {
         tableEl.append(row)
     })
 }
+
+document.querySelector('th').addEventListener('click',function(event) {
+    console.log(event.target)
+    console.log(event)
+})
 
 const queryData = (event) => {
     event.preventDefault();
@@ -140,8 +153,9 @@ const queryData = (event) => {
     if (avgTimeInputEl.value >= 1){
         filteredData = filteredData.filter(obj => obj.avg_time_per_turn == avgTimeInputEl.value)
     }
-    drawTable(filteredData);
-    overlay.classList.remove('hidden')
+    // drawTable(filteredData);
+    // overlay.classList.remove('hidden')
+    return filteredData
 }
 
 const createCheckBoxElement = (name) => {
@@ -175,6 +189,6 @@ function redirectNotLoggedIn(){
     }
 }
 overlay.addEventListener('click', closePopup);
-form.addEventListener('submit',queryData);
+form.addEventListener('submit',drawTable(false));
 window.addEventListener('load',redirectNotLoggedIn);
 
