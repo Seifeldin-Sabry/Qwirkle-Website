@@ -222,3 +222,6 @@ th, td {
     overflow: auto;
     background: rgba(255, 255, 255, 0.79);
 }
+th:hover {
+    cursor: pointer !important;
+}
