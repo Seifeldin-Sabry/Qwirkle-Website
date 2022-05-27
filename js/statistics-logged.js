@@ -142,6 +142,7 @@ const queryData = (event) => {
         filteredData = filteredData.filter(obj => obj.avg_time_per_turn == avgTimeInputEl.value)
     }
     drawTable(filteredData);
+    overlay.classList.remove('hidden')
 }
 
 const createCheckBoxElement = (name) => {
@@ -165,8 +166,7 @@ difficultyEl.getElementsByClassName('anchor')[0].onclick = function() {
     difficultyEl.classList.toggle('visible')
 }
 function closePopup(){
-    overlay.style.display = "none"
-    location.reload();
+    overlay.classList.add('hidden');
 }
 overlay.addEventListener('click', closePopup);
 form.addEventListener('submit',queryData);
