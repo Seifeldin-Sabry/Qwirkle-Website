@@ -79,10 +79,10 @@ const queryData = (event) => {
 
     let filteredData = [...data]
     console.log(filteredData, 'original data')
-    console.log(namesListEl)
-    console.log(namesCheckboxList)
-    console.log(difficultyCheckboxList)
-    console.log(gameOutcomeCheckboxList)
+    console.log(namesListEl,'name list')
+    console.log(namesCheckboxList,'namecheckbox')
+    console.log(difficultyCheckboxList, 'difficult')
+    console.log(gameOutcomeCheckboxList,'game outcome')
     if (!isAllUnchecked(namesCheckboxList)){
         const checkedNames = getAllCheckedValues(namesCheckboxList)
         filteredData = filteredData.filter(obj => {
