@@ -103,7 +103,6 @@ const sortBy = (column) => {
         }
         return 0;
     })
-    console.log(queriedData,'after sort')
     drawTable();
 }
 
@@ -155,6 +154,7 @@ const drawTable = (event) => {
     tableContainer.classList.remove('hidden')
     overlay.classList.remove('hidden')
     queryData(); //updates queried data
+    console.log(queriedData,'after sort')
     queriedData.forEach(object => {
         const row = document.createElement('tr')
         Object.values(object).forEach(prop => {
