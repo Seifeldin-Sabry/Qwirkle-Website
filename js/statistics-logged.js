@@ -59,7 +59,7 @@ const getAllCheckedValues = (list) => {
 
 const drawTable = (arrayObj) => {
     const firstRow = document.createElement('tr')
-    const arrHeaders = Object.keys(arrayObj[0])
+    const arrHeaders = Object.keys(data[0])
     for (const arrHeadersKey of arrHeaders) {
         firstRow.append(createElement(arrHeadersKey, true))
     }
