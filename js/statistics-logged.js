@@ -92,7 +92,7 @@ const sortBy = (column) => {
 
     console.log(toFilterOn)
     const columnName = column.toLowerCase().replace(' ','_');
-    queriedData = new Array(queriedData.sort((objA,objB) => {
+    return queriedData.sort((objA,objB) => {
         //if Ascending
         if (toFilterOn) {
             if (objA[columnName] > objB[columnName]) return -1
@@ -102,7 +102,7 @@ const sortBy = (column) => {
             if (objA[columnName] > objB[columnName]) return 1
         }
         return 0;
-    }))
+    })
 }
 
 const addTableHeadersEventHandlers = () => {
@@ -110,8 +110,7 @@ const addTableHeadersEventHandlers = () => {
     tableHeaders.forEach(header => {
         header.addEventListener('click',function (e){
             e.stopPropagation();
-            sortBy(e.target.innerText)
-            drawTable();
+            drawTable(sortBy(e.target.innerText));
         })
     })
 }
@@ -207,10 +206,11 @@ const queryData = () => {
         filteredData = filteredData.filter(obj => obj.avg_time_per_turn == avgTimeInputEl.value)
     }
     queriedData = [...filteredData];
+    return queriedData;
 }
 
 
-const drawTable = (event) => {
+const drawTable = (event,table) => {
     if (event) event.preventDefault();
     clearTable();
     tableContainer.classList.remove('hidden');
@@ -259,7 +259,7 @@ function redirectNotLoggedIn(){
     }
 }
 overlay.addEventListener('click', closePopup);
-form.addEventListener('submit',drawTable);
+form.addEventListener('submit',(ev) => drawTable(ev,queryData()));
 window.addEventListener('load',redirectNotLoggedIn);
 
 
