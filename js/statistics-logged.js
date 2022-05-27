@@ -2,7 +2,7 @@
 
 import {databaseData} from "./db/json.js";
 
-if (!localStorage.getItem('IsLoggedIn')) redirectToLogin();
+window.onload = redirectNotLoggedIn;
 
 const data = JSON.parse(databaseData)
 
@@ -173,6 +173,11 @@ difficultyEl.getElementsByClassName('anchor')[0].onclick = function() {
 }
 function closePopup(){
     overlay.classList.add('hidden');
+}
+function redirectNotLoggedIn(){
+    if (!localStorage.getItem('IsLoggedIn')){
+        redirectToLogin();
+    }
 }
 overlay.addEventListener('click', closePopup);
 form.addEventListener('submit',queryData);
