@@ -55,31 +55,39 @@ const sortBy = (column) => {
     let toFilterOn;
     switch (column){
         case "Player name":
+            isAscendingNames = shiftBool(isAscendingNames);
             toFilterOn = isAscendingNames;
             break;
         case "Game id":
+            isAscendingGameId = shiftBool(isAscendingGameId);
             toFilterOn = isAscendingGameId;
             break;
         case "Game outcome":
+            isAscendingGameOutcome = shiftBool(isAscendingGameOutcome);
             toFilterOn = isAscendingGameOutcome
             break;
         case "Computer score":
+            isAscendingComputerScore = shiftBool(isAscendingComputerScore);
             toFilterOn = isAscendingComputerScore
             break;
         case "Player score":
+            isAscendingPlayerScore = shiftBool(isAscendingPlayerScore);
             toFilterOn = isAscendingPlayerScore
             break;
         case "Avg time per turn":
+            isAscendingAvgTime = shiftBool(isAscendingAvgTime);
             toFilterOn = isAscendingAvgTime
             break;
         case "Date played":
+            isAscendingDate = shiftBool(isAscendingDate);
             toFilterOn = isAscendingDate
             break;
         case "Difficulty chosen":
+            isAscendingDifficulty = shiftBool(isAscendingDifficulty);
             toFilterOn = isAscendingDifficulty
             break;
     }
-    toFilterOn = shiftBool(toFilterOn);
+
     console.log(toFilterOn)
     const columnName = column.toLowerCase().replace(' ','_');
     queriedData = queriedData.sort((objA,objB) => {
