@@ -133,7 +133,7 @@ const queryData = (event) => {
         })
     }
     if (dateAfterInputEl.value){
-        const [year, month, day] = dateBeforeInputEl.value.split('-');
+        const [year, month, day] = dateAfterInputEl.value.split('-');
         const dateAfter = new Date(year,month-1,day);
         filteredData = filteredData.filter(obj => {
             const [year,month,day] = obj.date_played.split('-')
