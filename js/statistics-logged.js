@@ -25,7 +25,9 @@ const dateBeforeInputEl = document.querySelector('#dateBefore')
 const dateAfterInputEl = document.querySelector('#dateAfter')
 const avgTimeInputEl = document.querySelector('#avgTime')
 
-const namesCheckboxList = [...namesListEl.children].map(li => [...li.children][0])
+const namesCheckboxList = () => {
+    return [...namesListEl.children].map(li => [...li.children][0])
+}
 const difficultyCheckboxList = [...difficultyListEl.children].map(li => [...li.children][0])
 const gameOutcomeCheckboxList = [...gameOutcomeListEl.children].map(li => [...li.children][0])
 
@@ -78,12 +80,10 @@ const queryData = (event) => {
     event.preventDefault();
 
     let filteredData = [...data]
+    const namesListInputs = namesCheckboxList();
     console.log(filteredData, 'original data')
-    console.log(namesCheckboxList,'namecheckbox')
-    console.log(difficultyCheckboxList, 'difficult')
-    console.log(gameOutcomeCheckboxList,'game outcome')
-    if (!isAllUnchecked(namesCheckboxList)){
-        const checkedNames = getAllCheckedValues(namesCheckboxList)
+    if (!isAllUnchecked(namesListInputs)){
+        const checkedNames = getAllCheckedValues(namesListInputs)
         filteredData = filteredData.filter(obj => {
             return checkedNames.map(el => el.value).includes(obj.player_name);
         })
