@@ -110,7 +110,7 @@ const addTableHeadersEventHandlers = () => {
     tableHeaders.forEach(header => {
         header.addEventListener('click',function (e){
             e.stopPropagation();
-            drawTable(sortBy(e.target.innerText));
+            drawTable('',sortBy(e.target.innerText));
         })
     })
 }
