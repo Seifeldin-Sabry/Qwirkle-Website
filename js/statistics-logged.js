@@ -57,9 +57,12 @@ const getAllCheckedValues = (list) => {
     return list.filter(inputEl => inputEl.checked)
 }
 
-
+const clearTable = () => {
+    [...tableEl.children].forEach(element => element.remove());
+}
 
 const drawTable = (arrayObj) => {
+    clearTable();
     const firstRow = document.createElement('tr')
     const arrHeaders = Object.keys(data[0])
     for (const arrHeadersKey of arrHeaders) {
@@ -81,21 +84,21 @@ const queryData = (event) => {
 
     let filteredData = [...data]
     const namesListInputs = namesCheckboxList();
-    console.log(filteredData, 'original data')
+
     if (!isAllUnchecked(namesListInputs)){
         const checkedNames = getAllCheckedValues(namesListInputs)
         filteredData = filteredData.filter(obj => {
             return checkedNames.map(el => el.value).includes(obj.player_name);
         })
     }
-    console.log(filteredData, 'filtered names')
+
     if(!isAllUnchecked(difficultyCheckboxList)){
         const checkedDifficulty = getAllCheckedValues(difficultyCheckboxList)
         filteredData = filteredData.filter(obj => {
             return checkedDifficulty.map(el => el.value).includes(obj.difficulty_chosen);
         })
     }
-    console.log(filteredData,'filtered difficulty')
+
     if (!isAllUnchecked(gameOutcomeCheckboxList)){
         const checkedGameOutcome = getAllCheckedValues(gameOutcomeCheckboxList)
         filteredData = filteredData.filter(obj => {
@@ -104,32 +107,27 @@ const queryData = (event) => {
     }
     console.log(filteredData,'filteredGameOutcome')
     if (scoreInputEl.value >= 1){
-        console.log(scoreInputEl.value, 'score value')
         filteredData = filteredData.filter(obj => obj.player_score === scoreInputEl.value)
     }
-    console.log(filteredData,'filtered score')
+
     if (dateBeforeInputEl.value){
-        console.log(dateBeforeInputEl.value, 'date bef value')
         filteredData = filteredData.filter(obj => {
             const [year,month,day] = obj.date_played.split('-')
             let date = new Date(year,month-1,day)
             return dateBeforeInputEl.value >= date;
         })
     }
-    console.log(filteredData,'filtered date before')
+
     if (dateAfterInputEl.value){
-        console.log(dateAfterInputEl.value, 'date after value')
         filteredData = filteredData.filter(obj => {
             const [year,month,day] = obj.date_played.split('-')
             let date = new Date(year,month-1,day)
             return dateBeforeInputEl.value <= date;
         })
     }
-    console.log(filteredData,'filtered date after')
     if (avgTimeInputEl.value >= 1){
         filteredData = filteredData.filter(obj => obj.avg_time_per_turn === avgTimeInputEl.value)
     }
-    console.log(filteredData,'filtered average')
     drawTable(filteredData);
 }
 
