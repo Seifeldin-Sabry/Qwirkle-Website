@@ -192,6 +192,6 @@ function redirectNotLoggedIn(){
     }
 }
 overlay.addEventListener('click', closePopup);
-form.addEventListener('submit',drawTable(false));
+form.addEventListener('submit',() => drawTable(false));
 window.addEventListener('load',redirectNotLoggedIn);
 
