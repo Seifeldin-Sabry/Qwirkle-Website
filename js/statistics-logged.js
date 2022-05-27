@@ -2,7 +2,7 @@
 
 import {databaseData} from "./db/json.js";
 
-window.onload = redirectNotLoggedIn;
+window.addEventListener('loadstart',redirectNotLoggedIn);
 
 const data = JSON.parse(databaseData)
 
