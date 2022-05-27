@@ -15,7 +15,7 @@ function logout() {
     if (window.location.pathname === "statistics-logged.html") {
         location.replace('../statistics.html');
     } else {
-        location.reload();
+        // location.reload();
     }
 }
 
