@@ -156,8 +156,6 @@ const queryData = (event) => {
     if (avgTimeInputEl.value >= 1){
         filteredData = filteredData.filter(obj => obj.avg_time_per_turn == avgTimeInputEl.value)
     }
-    // drawTable(filteredData);
-    // overlay.classList.remove('hidden')
     return filteredData
 }
 
@@ -185,9 +183,7 @@ function closePopup(){
     overlay.classList.add('hidden');
 }
 function redirectNotLoggedIn(){
-    console.log('outside if statment')
     if (JSON.parse(localStorage.getItem('isLoggedIn')) === null || JSON.parse(localStorage.getItem('isLoggedIn')) === undefined) {
-        console.log('inside if statment')
         redirectToLogin();
     }
 }
