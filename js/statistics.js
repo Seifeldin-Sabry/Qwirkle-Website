@@ -19,11 +19,6 @@ const setLogin = (username) => {
     localStorage.setItem("user", `${username}`);
 }
 
-export const isLoggedIn = () => {
-    return JSON.parse(localStorage.getItem("isLoggedIn"))
-}
-
-if (isLoggedIn()) redirect();
 
 const validateLogin = (event) => {
     event.preventDefault();
@@ -43,8 +38,9 @@ const validateLogin = (event) => {
 formEl.addEventListener('submit', validateLogin);
 
 function redirectIfLoggedIn() {
-    if (localStorage.getItem('isLoggedIn') != undefined) {
+    if (JSON.parse(localStorage.getItem('isLoggedIn')) === true) {
         redirect();
     }
 }
+
 window.onload = redirectIfLoggedIn;
