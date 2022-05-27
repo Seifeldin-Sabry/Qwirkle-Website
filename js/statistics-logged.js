@@ -224,7 +224,7 @@ const drawTable = (event) => {
     tableContainer.classList.remove('hidden');
     overlay.classList.remove('hidden');
     queryData();
-    console.log(queriedData)
+    console.log(queriedData,'in draw table')
     queriedData.forEach(object => {
         const row = document.createElement('tr')
         Object.values(object).forEach(prop => {
