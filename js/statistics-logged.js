@@ -94,7 +94,6 @@ const sortBy = (column) => {
             toFilterOn = isAscendingGameDuration;
             break;
     }
-    console.log(toFilterOn)
     const columnName = column.toLowerCase().replaceAll(' ','_');
     queriedData = queriedData.sort((objA,objB) => {
         //if Ascending
@@ -107,7 +106,6 @@ const sortBy = (column) => {
         }
         return 0;
     })
-    console.log(queriedData, 'after sort')
 }
 
 const addTableHeadersEventHandlers = () => {
@@ -221,7 +219,6 @@ const drawTable = (event) => {
     clearTable();
     tableContainer.classList.remove('hidden');
     overlay.classList.remove('hidden');
-    console.log(queriedData,'in draw table')
     queriedData.forEach(object => {
         const row = document.createElement('tr')
         Object.values(object).forEach(prop => {
