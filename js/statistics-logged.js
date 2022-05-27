@@ -34,7 +34,9 @@ const scoreInputEl = document.querySelector('#score')
 const dateBeforeInputEl = document.querySelector('#dateBefore')
 const dateAfterInputEl = document.querySelector('#dateAfter')
 const avgTimeInputEl = document.querySelector('#avgTime')
-const shiftBool = (toShift) => toShift === true ? false : true;
+const shiftBool = (toShift) => {
+    return toShift !== true;
+}
 
 let isAscendingGameOutcome = true;
 let isAscendingAvgTime= true;
