@@ -46,6 +46,7 @@ let isAscendingDate = true;
 let isAscendingPlayerScore = true;
 let isAscendingComputerScore = true;
 let isAscendingGameId = true;
+let isAscendingGameDuration = true;
 
 let isEventListenerAdded = false;
 
@@ -88,8 +89,11 @@ const sortBy = (column) => {
             isAscendingDifficulty = shiftBool(isAscendingDifficulty);
             toFilterOn = isAscendingDifficulty
             break;
+        case "Game duration":
+            isAscendingGameDuration = shiftBool(isAscendingGameDuration)
+            toFilterOn = isAscendingGameDuration;
+            break;
     }
-
     console.log(toFilterOn)
     const columnName = column.toLowerCase().replace(' ','_');
     return queriedData.sort((objA,objB) => {
@@ -110,7 +114,7 @@ const addTableHeadersEventHandlers = () => {
     tableHeaders.forEach(header => {
         header.addEventListener('click',function (e){
             e.stopPropagation();
-            drawTable('',sortBy(e.target.innerText));
+            drawTable('',queryData(e.target.innerText));
         })
     })
 }
@@ -147,7 +151,7 @@ const clearTable = () => {
 }
 
 
-const queryData = () => {
+const queryData = (sortWith) => {
     if (checkListEl.classList.contains('visible')) {
         checkListEl.classList.toggle('visible')
     }
@@ -206,6 +210,9 @@ const queryData = () => {
         filteredData = filteredData.filter(obj => obj.avg_time_per_turn == avgTimeInputEl.value)
     }
     queriedData = [...filteredData];
+    if(sortWith) {
+        queriedData = sortBy(sortWith)
+    }
     return queriedData;
 }
 
@@ -216,7 +223,6 @@ const drawTable = (event,table) => {
     tableContainer.classList.remove('hidden');
     overlay.classList.remove('hidden');
     queryData();
-    console.log(queriedData)
     queriedData.forEach(object => {
         const row = document.createElement('tr')
         Object.values(object).forEach(prop => {
