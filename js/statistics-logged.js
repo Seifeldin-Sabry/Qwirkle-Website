@@ -120,7 +120,7 @@ const queryData = (event) => {
         filteredData = filteredData.filter(obj => {
             const [year,month,day] = obj.date_played.split('-')
             let date = new Date(year,month-1,day)
-            return dateBeforeInputEl.value <= date;
+            return dateAfterInputEl.value <= date;
         })
     }
     if (avgTimeInputEl.value >= 1){
