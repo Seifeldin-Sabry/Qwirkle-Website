@@ -27,6 +27,7 @@ const logoutEl = document.querySelector('#h2-logout')
 
 const redirectToLogin = (event) => {
     location.replace('../statistics.html');
+    console.log('redirect')
 }
 
 
