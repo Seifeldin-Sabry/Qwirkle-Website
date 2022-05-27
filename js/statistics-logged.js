@@ -80,6 +80,7 @@ const sortBy = (column) => {
     shiftBool(toFilterOn);
     const columnName = column.charAt(0).toUpperCase() + column.split(' ').slice(1).join('');
     queriedData = queriedData.sort((objA,objB) => {
+        console.log(objA,objB)
         //if Ascending
         if (toFilterOn) {
             if (objA[columnName] > objB[columnName]) return -1
@@ -90,13 +91,12 @@ const sortBy = (column) => {
         }
         return 0;
     })
-    console.log(queriedData)
+    console.log(queriedData,'after sort')
     drawTable();
 }
 
-const addTableHeadersEventHandlers = (event) => {
+const addTableHeadersEventHandlers = () => {
     const tableHeaders = [...[...tableEl.children][0].children]
-    console.log(tableHeaders)
     tableHeaders.forEach(header => {
         header.addEventListener('click',function (e){
             e.stopPropagation();
