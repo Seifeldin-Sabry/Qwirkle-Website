@@ -88,25 +88,25 @@ const queryData = (event) => {
             return checkedNames.map(el => el.value).includes(obj.player_name);
         })
     }
-
+    console.log(filteredData, 'filtered names')
     if(!isAllUnchecked(difficultyCheckboxList)){
         const checkedDifficulty = getAllCheckedValues(difficultyCheckboxList)
         filteredData = filteredData.filter(obj => {
             return checkedDifficulty.map(el => el.value).includes(obj.difficulty_chosen);
         })
     }
-
+    console.log(filteredData,'filtered difficulty')
     if (!isAllUnchecked(gameOutcomeCheckboxList)){
         const checkedGameOutcome = getAllCheckedValues(gameOutcomeCheckboxList)
         filteredData = filteredData.filter(obj => {
             return checkedGameOutcome.map(el => el.value).includes(obj.game_outcome);
         })
     }
-
+    console.log(filteredData,'filteredGameOutcome')
     if (!isNaN(scoreInputEl.value)){
         filteredData = filteredData.filter(obj => obj.player_score === scoreInputEl.value)
     }
-
+    console.log(filteredData,'filtered score')
     if (dateBeforeInputEl.value){
         filteredData = filteredData.filter(obj => {
             const [year,month,day] = obj.date_played.split('-')
@@ -114,7 +114,7 @@ const queryData = (event) => {
             return dateBeforeInputEl.value >= date;
         })
     }
-
+    console.log(filteredData,'filtered date before')
     if (dateAfterInputEl.value){
         filteredData = filteredData.filter(obj => {
             const [year,month,day] = obj.date_played.split('-')
@@ -122,11 +122,11 @@ const queryData = (event) => {
             return dateBeforeInputEl.value <= date;
         })
     }
-
+    console.log(filteredData,'filtered date after')
     if (!isNaN(avgTimeInputEl.value)){
         filteredData = filteredData.filter(obj => obj.avg_time_per_turn === avgTimeInputEl.value)
     }
-    console.log(filteredData)
+    console.log(filteredData,'filtered average')
     drawTable(filteredData);
 }
 
