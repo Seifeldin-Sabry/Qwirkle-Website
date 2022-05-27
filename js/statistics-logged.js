@@ -78,10 +78,10 @@ const sortBy = (column) => {
             break;
     }
     shiftBool(toFilterOn);
+    console.log(toFilterOn)
     const columnName = column.toLowerCase().replace(' ','_');
     queriedData = queriedData.sort((objA,objB) => {
         //if Ascending
-        console.log(objB[columnName],objA[columnName]);
         if (toFilterOn) {
             if (objA[columnName] > objB[columnName]) return -1
             if (objA[columnName] < objB[columnName]) return 1
