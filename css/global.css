@@ -208,10 +208,13 @@ h1.page-title {
     #h2-logout {
         font-size: 1.5em !important;
     }
+    .logo-link {
+        margin: 0 20% !important;
+    }
 }
 @media only screen and (max-width: 1098px) {
     .logo-link {
-        margin: 0 150px !important;
+        margin: 0 150px;
     }
 }
 
