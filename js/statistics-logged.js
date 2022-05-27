@@ -35,7 +35,7 @@ const dateBeforeInputEl = document.querySelector('#dateBefore')
 const dateAfterInputEl = document.querySelector('#dateAfter')
 const avgTimeInputEl = document.querySelector('#avgTime')
 const shiftBool = (toShift) => {
-    return toShift !== true;
+    return !toShift;
 }
 
 let isAscendingGameOutcome = true;
@@ -79,7 +79,7 @@ const sortBy = (column) => {
             toFilterOn = isAscendingDifficulty
             break;
     }
-    shiftBool(toFilterOn);
+    toFilterOn = shiftBool(toFilterOn);
     console.log(toFilterOn)
     const columnName = column.toLowerCase().replace(' ','_');
     queriedData = queriedData.sort((objA,objB) => {
