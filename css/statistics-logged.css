@@ -44,7 +44,7 @@ form {
     margin: auto;
 }
 #form-container {
-    padding: 35px;
+    padding: 10px 35px;
     background: #121212;
     width: 500px;
     height: 480px;
@@ -62,9 +62,7 @@ form {
     color: white;
     filter: drop-shadow(15px 15px 20px #121212);
     text-shadow: 15px 15px 20px #121212;
-    margin-bottom: 0;
-    margin-top: 15px;
-    z-index: 1;
+    margin: 15px auto;
 }
 #query > button {
     margin-bottom: 0 !important;
