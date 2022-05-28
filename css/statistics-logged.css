@@ -234,7 +234,7 @@ th:hover {
     color: white;
     padding: 10px;
     border: solid 1px white;
-    margin-right: 10px;
+    margin-right: 20px;
 }
 #query > label:nth-child(6) {
     width: 90px !important;
