@@ -9,6 +9,7 @@ let queriedData;
 let uniqueNames = data.map(obj => obj.player_name)
 uniqueNames = new Set(uniqueNames);
 
+const averageTimeFilter = document.querySelector('#avg-criteria')
 const scoreFilter = document.querySelector('#score-criteria')
 const checkListEl = document.querySelector('#name-list');
 const gameOutcomeEl = document.querySelector('#game-outcome')
@@ -221,13 +222,13 @@ const queryData = () => {
     if (parseFloat(avgTimeInputEl.value) >= 1){
         switch (scoreFilter.value){
             case "Above":
-                filteredData = filteredData.filter(obj => obj.player_score > parseFloat(scoreInputEl.value));
+                filteredData = filteredData.filter(obj => obj.avg_time_per_turn > parseFloat(avgTimeInputEl.value));
                 break;
             case "Equal":
-                filteredData = filteredData.filter(obj => obj.player_score == scoreInputEl.value);
+                filteredData = filteredData.filter(obj => obj.avg_time_per_turn == avgTimeInputEl.value);
                 break;
             case "Below":
-                filteredData = filteredData.filter(obj => obj.player_score < parseFloat(scoreInputEl.value));
+                filteredData = filteredData.filter(obj => obj.avg_time_per_turn < parseFloat(avgTimeInputEl.value));
                 break;
             default:
                 break;
