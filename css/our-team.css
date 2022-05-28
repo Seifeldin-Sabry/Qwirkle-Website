@@ -113,8 +113,43 @@ div.flip-box-back > p {
     bottom: 8%;
     left: 0;
 }
-@media only screen and (max-width:  1230px){
+@media only screen and (max-width:  1400px){
+    div.flip-box-back > p {
+        font-size: 1.6em;
+    }
+}
+@media only screen and (max-width:  1250px){
+    div.flip-box-back > p {
+        font-size: 1.4em;
+    }
+}
+@media only screen and (max-width:  1080px){
     div.flip-box-back > p {
         font-size: 1.2em;
+    }
+}
+@media only screen and (max-width:  950px){
+    div.flip-box-back > p {
+        font-size: 1.6em;
+    }
+}
+@media only screen and (max-width:  820px){
+    div.flip-box-back > p {
+        font-size: 1.4em;
+    }
+}
+@media only screen and (max-width:  730px){
+    div.flip-box-back > p {
+        font-size: 1.2em;
+    }
+}
+@media only screen and (max-width:  630px){
+    div.flip-box-back > p {
+        font-size: 1.9em;
+    }
+}
+@media only screen and (max-width:  515px){
+    div.flip-box-back > p {
+        font-size: 1.7em;
     }
 }
