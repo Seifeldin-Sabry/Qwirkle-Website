@@ -185,6 +185,7 @@ const queryData = () => {
         })
     }
     if (scoreInputEl.value >= 1){
+        console.log(scoreFilter.value);
         switch (scoreFilter.value){
             case "Above":
                 filteredData = filteredData.filter(obj => obj.player_score > parseInt(scoreInputEl.value));
