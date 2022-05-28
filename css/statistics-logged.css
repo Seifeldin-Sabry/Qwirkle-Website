@@ -227,7 +227,7 @@ th, td {
 th:hover {
     cursor: pointer !important;
 }
-#score-criteria {
+#score-criteria, #avg-criteria {
     display: inline-block;
     width: 86px;
     height: 40px;
@@ -235,8 +235,9 @@ th:hover {
     color: white;
     padding: 10px;
     border: solid 1px white;
-    margin-right: 20px;
+    margin-right: 10px;
+    border-radius: 10px;
 }
-#query > label:nth-child(6) {
-    width: 90px !important;
+#query > label:nth-child(6), #query > label:nth-child(9) {
+    width: 100px !important;
 }
