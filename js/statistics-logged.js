@@ -184,17 +184,19 @@ const queryData = () => {
             return checkedGameOutcome.map(el => el.value).includes(obj.game_outcome);
         })
     }
-    if (parseInt(scoreInputEl.value) >= 1){
+    console.log(scoreInputEl.value, 'score')
+    console.log(scoreFilter.value,'value')
+    if (parseFloat(scoreInputEl.value) >= 1){
         console.log(scoreFilter.value);
         switch (scoreFilter.value){
             case "Above":
-                filteredData = filteredData.filter(obj => obj.player_score > parseInt(scoreInputEl.value));
+                filteredData = filteredData.filter(obj => obj.player_score > parseFloat(scoreInputEl.value));
                 break;
             case "Equal":
                 filteredData = filteredData.filter(obj => obj.player_score == scoreInputEl.value);
                 break;
             case "Below":
-                filteredData = filteredData.filter(obj => obj.player_score > parseInt(scoreInputEl.value));
+                filteredData = filteredData.filter(obj => obj.player_score > parseFloat(scoreInputEl.value));
                 break;
             default:
                 break;
