@@ -163,6 +163,7 @@ form {
     background: black;
     width: 85%;
     padding: 25px;
+    font-family: 'kg_primary_whimsyregular';
 }
 #name-list > ul > li:nth-child(1) > input[type=checkbox], #name-list > ul > li:nth-child(2) > input[type=checkbox],
 #name-list > ul > li:nth-child(3) > input[type=checkbox], #name-list > ul > li:nth-child(4) > input[type=checkbox]{
