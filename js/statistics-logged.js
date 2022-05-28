@@ -220,7 +220,7 @@ const queryData = () => {
         })
     }
     if (parseFloat(avgTimeInputEl.value) >= 1){
-        switch (scoreFilter.value){
+        switch (averageTimeFilter.value){
             case "Above":
                 filteredData = filteredData.filter(obj => obj.avg_time_per_turn > parseFloat(avgTimeInputEl.value));
                 break;
