@@ -184,6 +184,8 @@ const queryData = () => {
             return checkedGameOutcome.map(el => el.value).includes(obj.game_outcome);
         })
     }
+    console.log(scoreInputEl.value, 'score')
+    console.log(scoreFilter.value,'value')
     if (parseInt(scoreInputEl.value) >= 1){
         console.log(scoreFilter.value);
         switch (scoreFilter.value){
