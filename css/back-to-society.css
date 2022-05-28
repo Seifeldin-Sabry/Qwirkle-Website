@@ -1,6 +1,4 @@
-footer {
-    position: fixed !important;
-}
+
 article {
     max-width: 1440px;
     padding: 2% 4% 2%;
@@ -59,6 +57,7 @@ p.secondaryCaption {
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+
 
 
 
