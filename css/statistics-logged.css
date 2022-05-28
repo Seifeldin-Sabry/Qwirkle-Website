@@ -47,7 +47,7 @@ form {
     padding: 10px 35px;
     background: #121212;
     width: 500px;
-    height: 480px;
+    height: 520px;
     margin: auto;
     border-radius: 25px;
     filter: drop-shadow(15px 15px 20px #121212);
@@ -225,4 +225,17 @@ th, td {
 }
 th:hover {
     cursor: pointer !important;
+}
+#score-criteria {
+    display: inline-block;
+    width: 86px;
+    height: 40px;
+    background: #121212;
+    color: white;
+    padding: 10px;
+    border: solid 1px white;
+    margin-right: 20px;
+}
+#query > label:nth-child(6) {
+    width: 90px !important;
 }
