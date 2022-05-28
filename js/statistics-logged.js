@@ -9,7 +9,7 @@ let queriedData;
 let uniqueNames = data.map(obj => obj.player_name)
 uniqueNames = new Set(uniqueNames);
 
-
+const scoreFilter = document.querySelector('#score-criteria')
 const checkListEl = document.querySelector('#name-list');
 const gameOutcomeEl = document.querySelector('#game-outcome')
 const difficultyEl = document.querySelector('#difficulty')
@@ -185,7 +185,20 @@ const queryData = () => {
         })
     }
     if (scoreInputEl.value >= 1){
-        filteredData = filteredData.filter(obj => obj.player_score == scoreInputEl.value)
+        switch (scoreFilter.value){
+            case "Above":
+                filteredData = filteredData.filter(obj => obj.player_score > parseInt(scoreInputEl.value));
+                break;
+            case "Equal":
+                filteredData = filteredData.filter(obj => obj.player_score == scoreInputEl.value);
+                break;
+            case "Below":
+                filteredData = filteredData.filter(obj => obj.player_score > parseInt(scoreInputEl.value));
+                break;
+            default:
+                break;
+        }
+
     }
 
     if (dateBeforeInputEl.value){
