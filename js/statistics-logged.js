@@ -184,10 +184,7 @@ const queryData = () => {
             return checkedGameOutcome.map(el => el.value).includes(obj.game_outcome);
         })
     }
-    console.log(scoreInputEl.value, 'score')
-    console.log(scoreFilter.value,'value')
     if (parseFloat(scoreInputEl.value) >= 1){
-        console.log(scoreFilter.value);
         switch (scoreFilter.value){
             case "Above":
                 filteredData = filteredData.filter(obj => obj.player_score > parseFloat(scoreInputEl.value));
@@ -196,12 +193,11 @@ const queryData = () => {
                 filteredData = filteredData.filter(obj => obj.player_score == scoreInputEl.value);
                 break;
             case "Below":
-                filteredData = filteredData.filter(obj => obj.player_score > parseFloat(scoreInputEl.value));
+                filteredData = filteredData.filter(obj => obj.player_score < parseFloat(scoreInputEl.value));
                 break;
             default:
                 break;
         }
-
     }
 
     if (dateBeforeInputEl.value){
@@ -222,8 +218,20 @@ const queryData = () => {
             return dateAfter.getTime() <= date.getTime();
         })
     }
-    if (avgTimeInputEl.value >= 1){
-        filteredData = filteredData.filter(obj => obj.avg_time_per_turn == avgTimeInputEl.value)
+    if (parseFloat(avgTimeInputEl.value) >= 1){
+        switch (scoreFilter.value){
+            case "Above":
+                filteredData = filteredData.filter(obj => obj.player_score > parseFloat(scoreInputEl.value));
+                break;
+            case "Equal":
+                filteredData = filteredData.filter(obj => obj.player_score == scoreInputEl.value);
+                break;
+            case "Below":
+                filteredData = filteredData.filter(obj => obj.player_score < parseFloat(scoreInputEl.value));
+                break;
+            default:
+                break;
+        }
     }
     queriedData = [...filteredData];
     return queriedData;
