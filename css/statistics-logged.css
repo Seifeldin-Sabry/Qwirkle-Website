@@ -123,6 +123,7 @@ form {
     border: 1px solid #ccc;
     height: 39px;
     line-height: 28px;
+    border-radius: 10px;
 }
 
 .dropdown-check-list .anchor:after {
